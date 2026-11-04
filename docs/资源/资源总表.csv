@@ -1,0 +1,270 @@
+id,type,chapter,cn_name,owner,status,path,note,updated
+LV_01_inn,level,01,驿站夜·残简三声,策划,draft,Levels/LV_01_inn,叙事VS·驿站；与四层 LV_L01_Mountain 并存·不 deprecate；旧 LV_inn_night 见 redirects,2026-11-03
+LV_L01_Mountain,level,L01,高山层逻辑关,关卡概念,draft,Levels/LV_L01_Mountain,四层闭环·Theme=Mountain；层主键 L01,2026-11-03
+LV_L02_Bridge,level,L02,石桥层逻辑关,关卡概念,draft,Levels/LV_L02_Bridge,四层闭环·Theme=Bridge；层主键 L02,2026-11-03
+LV_L03_Magma,level,L03,岩浆层逻辑关,关卡概念,draft,Levels/LV_L03_Magma,四层闭环·Theme=Magma；层主键 L03,2026-11-03
+LV_L04_Grotto,level,L04,洞府层逻辑关,关卡概念,draft,Levels/LV_L04_Grotto,四层闭环·Theme=Grotto；层主键 L04,2026-11-03
+CS_01_intro,cutscene,01,章1开场过场,策划,draft,Cutscenes/CS_01_intro,秦驿夜旁白,2026-11-03
+SC_01_host,cutscene,01,掌柜半互动,策划,draft,Cutscenes/SC_01_host,,2026-11-03
+SC_01_guest,cutscene,01,旅客半互动,策划,draft,Cutscenes/SC_01_guest,,2026-11-03
+BI_01_yard,cutscene,01,后院战斗引入,策划,draft,Cutscenes/BI_01_yard,,2026-11-03
+KO_01_zheng,cutscene,01,猙击杀演出,策划,draft,Cutscenes/KO_01_zheng,,2026-11-03
+CS_01_expose,cutscene,01,揭穿过场,策划,draft,Cutscenes/CS_01_expose,,2026-11-03
+BI_01_host,cutscene,01,掌柜开战引入,策划,draft,Cutscenes/BI_01_host,,2026-11-03
+BI_01_elite,cutscene,01,蒙狰精英引入,策划,draft,Cutscenes/BI_01_elite,,2026-11-03
+CS_01_outro,cutscene,01,章1收束过场,策划,draft,Cutscenes/CS_01_outro,,2026-11-03
+ST_win,cutscene,,胜利结算,策划,draft,Cutscenes/ST_win,,2026-11-03
+ST_lose,cutscene,,失败结算,策划,draft,Cutscenes/ST_lose,,2026-11-03
+DLG_01_host,dialogue,01,掌柜对话树,策划,draft,Dialogue/DLG_01_host,自 N_host 迁移,2026-11-03
+DLG_01_guest,dialogue,01,旅客对话树,策划,draft,Dialogue/DLG_01_guest,自 N_guest 迁移,2026-11-03
+DLG_01_mute,dialogue,01,哑仆对话树,策划,draft,Dialogue/DLG_01_mute,自 N_mute 迁移,2026-11-03
+DLG_01_self,dialogue,01,旁白节点,策划,draft,Dialogue/DLG_01_self,自 N_self 迁移,2026-11-03
+N_bandit,combat_unit,,刀手杂兵,数值,draft,Combat/Units/N_bandit,战斗单位 N_ 保留,2026-11-03
+N_bandit_r,combat_unit,,弓手杂兵,数值,draft,Combat/Units/N_bandit_r,,2026-11-03
+E_double,combat_unit,,假贼替身精英,数值,draft,Combat/Units/E_double,,2026-11-03
+B_host,combat_unit,01,掌柜 Boss,数值,draft,Combat/Units/B_host,,2026-11-03
+ENC_tut_1,encounter,01,教程遭遇1,数值,draft,Combat/Encounters/ENC_tut_1,,2026-11-03
+ENC_yard,encounter,01,后院遭遇,数值,draft,Combat/Encounters/ENC_yard,,2026-11-03
+SK_slash,skill,,轻斩,数值,draft,Combat/Skills/SK_slash,,2026-11-03
+DMG_melee_light,dmg,,近战轻击公式,数值,draft,Combat/Damage/DMG_melee_light,,2026-11-03
+CHAR_player_swordsman,character,,剑客主角数值,数值,draft,Combat/Chars/CHAR_player_swordsman,,2026-11-03
+CFG_combat_k_def,config,,防御常数 K_def,数值,draft,Config/CFG_combat_k_def,,2026-11-03
+SP_birth,spawn,01,章1出生点,策划,draft,Spawns/SP_birth,,2026-11-03
+MM_default,minimap,,默认小地图,策划,draft,UI/Minimap/MM_default,,2026-11-03
+ENV_L01_Entrance,env,L01,高山入场块,场景,draft,Environments/ENV_L01_Entrance,四层·高山占位,2026-11-03
+ENV_L01_Mountain,env,L01,高山洞窟层根,场景,draft,Environments/ENV_L01_Mountain,L01高山,2026-11-03
+ENV_L02_Bridge,env,L02,石桥厅层根,场景,draft,Environments/ENV_L02_Bridge,L02石桥,2026-11-03
+ENV_L03_Magma,env,L03,岩浆窟层根,场景,draft,Environments/ENV_L03_Magma,L03岩浆,2026-11-03
+ENV_L04_Grotto,env,L04,洞府殿层根,场景,draft,Environments/ENV_L04_Grotto,L04洞府,2026-11-03
+ENV_Inn_Porch,env,01,驿站外廊,场景,draft,Environments/ENV_Inn_Porch,LV_01_inn·试玩主线七块；勿用 ENV_L01_*,2026-11-03
+ENV_Inn_Hall,env,01,驿站堂,场景,draft,Environments/ENV_Inn_Hall,LV_01_inn·对话/对质主空间,2026-11-03
+ENV_Inn_Wing,env,01,驿站侧廊,场景,draft,Environments/ENV_Inn_Wing,LV_01_inn·客房侧廊线索,2026-11-03
+ENV_Inn_Upper,env,01,驿站上房,场景,draft,Environments/ENV_Inn_Upper,LV_01_inn·可锁→残页QE3,2026-11-03
+ENV_Inn_Yard,env,01,驿站后院,场景,draft,Environments/ENV_Inn_Yard,LV_01_inn·伪匣QE4,2026-11-03
+ENV_Inn_Kitchen,env,01,驿站灶房,场景,draft,Environments/ENV_Inn_Kitchen,LV_01_inn·哑仆/字条QE5,2026-11-03
+ENV_Inn_Bamboo,env,01,驿站竹林口,场景,draft,Environments/ENV_Inn_Bamboo,LV_01_inn·离关Outro,2026-11-03
+AN_Teleport_L01_spawn,anchor,L01,高山传送落点·出生,场景,draft,Anchors/AN_Teleport_L01_spawn,旧 Anchor_Teleport 见 redirects,2026-11-03
+AN_Look_L01_peak,anchor,L01,峰顶朝向锚,场景,draft,Anchors/AN_Look_L01_peak,,2026-11-03
+AN_Save_L04_altar,anchor,L04,祭坛存档锚,场景,draft,Anchors/AN_Save_L04_altar,,2026-11-03
+UI_hud_hp,ui,,HUD 生命条,UI,draft,UI/ICO_hud_hp.png,子类 ICO_,2026-11-03
+UI_hud_mp,ui,,HUD 灵力条,UI,draft,UI/ICO_hud_mp.png,子类 ICO_,2026-11-03
+UI_result_win,ui,,胜利结算图,UI,draft,UI/IMG_result_win.png,子类 IMG_,2026-11-03
+N_ghost,combat_unit,,鬼怪,数值,draft,Combat/Units/N_ghost,关卡概念原画；对应旧 N_shade,2026-11-03
+N_ghost_armor,combat_unit,,半甲鬼怪,数值,draft,Combat/Units/N_ghost_armor,鬼怪变体·半甲,2026-11-03
+E_minotaur,combat_unit,,牛头怪,数值,draft,Combat/Units/E_minotaur,精英·关卡概念原画,2026-11-03
+B_serpent,combat_unit,,蛇形大BOSS,数值,draft,Combat/Units/B_serpent,章Boss·默认可挂章2-3换皮；并列 B_bamboo/B_shrine,2026-11-03
+ENC_ghost_1,encounter,,鬼怪遭遇1,数值,draft,Combat/Encounters/ENC_ghost_1,N_ghost×2,2026-11-03
+ENC_ghost_armor_mix,encounter,,鬼怪混编遭遇,数值,draft,Combat/Encounters/ENC_ghost_armor_mix,可选,2026-11-03
+ENC_minotaur_gate,encounter,,牛头门卫遭遇,数值,draft,Combat/Encounters/ENC_minotaur_gate,E_minotaur×1,2026-11-03
+ENC_serpent_boss,encounter,,蛇形Boss遭遇,数值,draft,Combat/Encounters/ENC_serpent_boss,B_serpent×1,2026-11-03
+SK_ghost_claw,skill,,鬼怪利爪,数值,draft,Combat/Skills/SK_ghost_claw,,2026-11-03
+SK_ghost_claw2,skill,,鬼怪双爪,数值,draft,Combat/Skills/SK_ghost_claw2,,2026-11-03
+SK_ghost_pounce,skill,,鬼怪影扑,数值,draft,Combat/Skills/SK_ghost_pounce,ShadowStretch,2026-11-03
+SK_ghost_armor_claw,skill,,半甲鬼怪甲爪,数值,draft,Combat/Skills/SK_ghost_armor_claw,,2026-11-03
+SK_ghost_armor_pounce,skill,,半甲鬼怪沉扑,数值,draft,Combat/Skills/SK_ghost_armor_pounce,,2026-11-03
+SK_ghost_armor_pulse,skill,,半甲鬼怪甲振,数值,draft,Combat/Skills/SK_ghost_armor_pulse,selfAoE,2026-11-03
+SK_mino_axe_h,skill,,牛头斧横,数值,draft,Combat/Skills/SK_mino_axe_h,,2026-11-03
+SK_mino_axe_v,skill,,牛头斧砸,数值,draft,Combat/Skills/SK_mino_axe_v,,2026-11-03
+SK_mino_charge,skill,,牛头抬腿冲,数值,draft,Combat/Skills/SK_mino_charge,line·抬腿预警,2026-11-03
+SK_mino_chain,skill,,牛头断链扫,数值,draft,Combat/Skills/SK_mino_chain,sin或line,2026-11-03
+SK_serpent_bite,skill,,蛇形昂咬,数值,draft,Combat/Skills/SK_serpent_bite,,2026-11-03
+SK_serpent_tail,skill,,蛇形甩尾,数值,draft,Combat/Skills/SK_serpent_tail,预警>=0.35s,2026-11-03
+SK_serpent_coil,skill,,蛇形盘压,数值,draft,Combat/Skills/SK_serpent_coil,selfAoE,2026-11-03
+SK_serpent_spit,skill,,蛇形毒涎,数值,draft,Combat/Skills/SK_serpent_spit,parabola,2026-11-03
+SK_serpent_wave,skill,,蛇形波躯,数值,draft,Combat/Skills/SK_serpent_wave,sin,2026-11-03
+DMG_ghost_melee,dmg,,鬼怪近战公式,数值,draft,Combat/Damage/DMG_ghost_melee,占位,2026-11-03
+DMG_mino_heavy,dmg,,牛头重击公式,数值,draft,Combat/Damage/DMG_mino_heavy,占位,2026-11-03
+DMG_serpent_boss,dmg,,蛇形Boss公式,数值,draft,Combat/Damage/DMG_serpent_boss,占位,2026-11-03
+BI_ghost_pack,cutscene,,鬼怪遭遇引入,策划,draft,Cutscenes/BI_ghost_pack,ENC_ghost_1,2026-11-03
+KO_ghost,cutscene,,鬼怪击杀演出,策划,draft,Cutscenes/KO_ghost,,2026-11-03
+BI_minotaur_gate,cutscene,,牛头门战引入,策划,draft,Cutscenes/BI_minotaur_gate,ENC_minotaur_gate,2026-11-03
+KO_minotaur,cutscene,,牛头击杀演出,策划,draft,Cutscenes/KO_minotaur,,2026-11-03
+BI_serpent,cutscene,,蛇形Boss引入,策划,draft,Cutscenes/BI_serpent,ENC_serpent_boss,2026-11-03
+KO_serpent,cutscene,,蛇形Boss击杀,策划,draft,Cutscenes/KO_serpent,,2026-11-03
+AN_spawn_ghost_L01,anchor,L01,鬼怪刷怪锚L01,场景,draft,Anchors/AN_spawn_ghost_L01,owner场景,2026-11-03
+AN_spawn_mino_gate,anchor,L02,牛头门刷怪锚,场景,draft,Anchors/AN_spawn_mino_gate,,2026-11-03
+AN_spawn_serpent,anchor,,蛇形Boss刷怪锚,场景,draft,Anchors/AN_spawn_serpent,章舞台待定,2026-11-03
+AN_Teleport_serpent_escape_a,anchor,,蛇Boss逃点A,场景,draft,Anchors/AN_Teleport_serpent_escape_a,AOE逃点,2026-11-03
+BGM_L01_explore,audio,L01,高山洞窟探索,策划,draft,Audio/BGM/BGM_L01_explore,探索床,2026-11-03
+BGM_L02_explore,audio,L02,石桥厅探索,策划,draft,Audio/BGM/BGM_L02_explore,,2026-11-03
+BGM_L03_explore,audio,L03,岩浆窟探索,策划,draft,Audio/BGM/BGM_L03_explore,,2026-11-03
+BGM_L04_explore,audio,L04,洞府殿探索,策划,draft,Audio/BGM/BGM_L04_explore,,2026-11-03
+BGM_inn_night,audio,01,驿站夜,策划,draft,Audio/BGM/BGM_inn_night,章1 VS,2026-11-03
+BGM_battle_trash,audio,,杂兵战,策划,draft,Audio/BGM/BGM_battle_trash,,2026-11-03
+BGM_battle_elite,audio,,精英战,策划,draft,Audio/BGM/BGM_battle_elite,,2026-11-03
+BGM_battle_boss,audio,,Boss通床,策划,draft,Audio/BGM/BGM_battle_boss,无专曲时用,2026-11-03
+BGM_boss_host,audio,01,掌柜Boss主题,策划,draft,Audio/BGM/BGM_boss_host,B_host,2026-11-03
+BGM_boss_serpent,audio,,蛇形Boss主题,策划,draft,Audio/BGM/BGM_boss_serpent,B_serpent;BI同步,2026-11-03
+BGM_boss_minotaur,audio,,牛头精英主题,策划,draft,Audio/BGM/BGM_boss_minotaur,E_minotaur,2026-11-03
+BGM_stinger_win,audio,,胜利刺音,策划,draft,Audio/BGM/BGM_stinger_win,ST_win,2026-11-03
+BGM_stinger_lose,audio,,失败刺音,策划,draft,Audio/BGM/BGM_stinger_lose,ST_lose,2026-11-03
+BGM_cutscene_bed,audio,,过场通用床,策划,draft,Audio/BGM/BGM_cutscene_bed,,2026-11-03
+BGM_cutscene_01_intro,audio,01,章1开场床,策划,draft,Audio/BGM/BGM_cutscene_01_intro,CS_01_intro,2026-11-03
+SND_sword_whoosh,audio,,剑挥空,策划,draft,Audio/SFX/Combat/SND_sword_whoosh,旧SFX_blade_whoosh,2026-11-03
+SND_sword_hit,audio,,剑命中,策划,draft,Audio/SFX/Combat/SND_sword_hit,旧SFX_blade_hit,2026-11-03
+SND_sword_block,audio,,格挡,策划,draft,Audio/SFX/Combat/SND_sword_block,,2026-11-03
+SND_sword_charge_loop,audio,,蓄力循环,策划,draft,Audio/SFX/Combat/SND_sword_charge_loop,3s,2026-11-03
+SND_sword_charge_ready,audio,,蓄力满,策划,draft,Audio/SFX/Combat/SND_sword_charge_ready,,2026-11-03
+SND_sk_tianhui_cast,audio,,天灰无影释放,策划,draft,Audio/SFX/Combat/SND_sk_tianhui_cast,,2026-11-03
+SND_proj_line_fly,audio,,直线弹道飞,策划,draft,Audio/SFX/Combat/SND_proj_line_fly,,2026-11-03
+SND_proj_sin_fly,audio,,Sin弹道飞,策划,draft,Audio/SFX/Combat/SND_proj_sin_fly,,2026-11-03
+SND_proj_parabola_land,audio,,抛物落地,策划,draft,Audio/SFX/Combat/SND_proj_parabola_land,,2026-11-03
+SND_aoe_self,audio,,自身AoE,策划,draft,Audio/SFX/Combat/SND_aoe_self,,2026-11-03
+SND_ghost_whoosh,audio,,鬼怪滑翔,策划,draft,Audio/SFX/Combat/SND_ghost_whoosh,,2026-11-03
+SND_ghost_pounce_tele,audio,,鬼怪扑杀预警,策划,draft,Audio/SFX/Combat/SND_ghost_pounce_tele,,2026-11-03
+SND_ghost_claw,audio,,鬼怪爪击,策划,draft,Audio/SFX/Combat/SND_ghost_claw,,2026-11-03
+SND_ghost_armor_pulse,audio,,半甲甲振,策划,draft,Audio/SFX/Combat/SND_ghost_armor_pulse,,2026-11-03
+SND_mino_charge_tele,audio,,牛头冲撞预警,策划,draft,Audio/SFX/Combat/SND_mino_charge_tele,≥0.4s,2026-11-03
+SND_mino_charge_loop,audio,,牛头冲撞循环,策划,draft,Audio/SFX/Combat/SND_mino_charge_loop,,2026-11-03
+SND_mino_axe,audio,,牛头斧击,策划,draft,Audio/SFX/Combat/SND_mino_axe,,2026-11-03
+SND_mino_chain,audio,,牛头链扫,策划,draft,Audio/SFX/Combat/SND_mino_chain,,2026-11-03
+SND_serpent_tail_tele,audio,,蛇甩尾预警,策划,draft,Audio/SFX/Combat/SND_serpent_tail_tele,≥0.35s,2026-11-03
+SND_serpent_spit,audio,,蛇毒涎,策划,draft,Audio/SFX/Combat/SND_serpent_spit,,2026-11-03
+SND_serpent_coil,audio,,蛇盘压,策划,draft,Audio/SFX/Combat/SND_serpent_coil,,2026-11-03
+SND_serpent_bite,audio,,蛇昂咬,策划,draft,Audio/SFX/Combat/SND_serpent_bite,,2026-11-03
+SND_enemy_death_ash,audio,,敌死亡散灰,策划,draft,Audio/SFX/Combat/SND_enemy_death_ash,,2026-11-03
+SND_teleport_out,audio,,传送出发,策划,draft,Audio/SFX/World/SND_teleport_out,,2026-11-03
+SND_teleport_in,audio,,传送落地,策划,draft,Audio/SFX/World/SND_teleport_in,,2026-11-03
+SND_foot_stone,audio,,石地脚步,策划,draft,Audio/SFX/World/SND_foot_stone,,2026-11-03
+SND_amb_L01_cold,audio,L01,高山冷氛围,策划,draft,Audio/SFX/Amb/SND_amb_L01_cold,氛围床;见音频设计 Amb 节,2026-11-03
+SND_amb_inn_night,audio,01,驿站夜氛围,策划,draft,Audio/SFX/Amb/SND_amb_inn_night,氛围床;见音频设计 Amb 节,2026-11-03
+VO_narr_01_intro,audio,01,章1开场旁白,策划,draft,Audio/VO/VO_narr_01_intro,CS_01_intro,2026-11-03
+VO_beast_name_zheng,audio,01,点名·猙,策划,draft,Audio/VO/VO_beast_name_zheng,山海经点名,2026-11-03
+VFX_hit_blade,vfx,,刃命中,策划,draft,VFX/Combat/Hit/VFX_hit_blade,SkillConfig vfx.hit,2026-11-03
+VFX_hit_energy,vfx,,能量命中,策划,draft,VFX/Combat/Hit/VFX_hit_energy,,2026-11-03
+VFX_hit_heavy,vfx,,重击命中,策划,draft,VFX/Combat/Hit/VFX_hit_heavy,,2026-11-03
+VFX_block_spark,vfx,,格挡火花,策划,draft,VFX/Combat/Block/VFX_block_spark,禁全屏闪,2026-11-03
+VFX_charge_sword_loop,vfx,,剑蓄力循环,策划,draft,VFX/Combat/Charge/VFX_charge_sword_loop,3s,2026-11-03
+VFX_charge_sword_ready,vfx,,剑蓄力满,策划,draft,VFX/Combat/Charge/VFX_charge_sword_ready,,2026-11-03
+VFX_cast_tianhui,vfx,,天灰无影释放,策划,draft,VFX/Combat/Cast/VFX_cast_tianhui,,2026-11-03
+VFX_proj_line,vfx,,直线弹道,策划,draft,VFX/Combat/Proj/VFX_proj_line,,2026-11-03
+VFX_proj_sin,vfx,,Sin弹道,策划,draft,VFX/Combat/Proj/VFX_proj_sin,,2026-11-03
+VFX_proj_parabola,vfx,,抛物弹道,策划,draft,VFX/Combat/Proj/VFX_proj_parabola,,2026-11-03
+VFX_aoe_self_ring,vfx,,自身AoE环,策划,draft,VFX/Combat/AoE/VFX_aoe_self_ring,,2026-11-03
+VFX_aoe_impact,vfx,,落地冲击圈,策划,draft,VFX/Combat/AoE/VFX_aoe_impact,,2026-11-03
+VFX_ghost_mist_trail,vfx,,鬼怪雾尾,策划,draft,VFX/Combat/Unit/VFX_ghost_mist_trail,N_ghost,2026-11-03
+VFX_ghost_shadow_stretch,vfx,,鬼怪影拉伸,策划,draft,VFX/Combat/Unit/VFX_ghost_shadow_stretch,ShadowStretch,2026-11-03
+VFX_ghost_pounce_tele,vfx,,鬼怪扑杀预警,策划,draft,VFX/Combat/Unit/VFX_ghost_pounce_tele,,2026-11-03
+VFX_ghost_armor_pulse,vfx,,半甲甲振,策划,draft,VFX/Combat/Unit/VFX_ghost_armor_pulse,,2026-11-03
+VFX_mino_charge_tele,vfx,,牛头冲撞预警,策划,draft,VFX/Combat/Unit/VFX_mino_charge_tele,,2026-11-03
+VFX_mino_dust_charge,vfx,,牛头冲撞尘带,策划,draft,VFX/Combat/Unit/VFX_mino_dust_charge,,2026-11-03
+VFX_serpent_scale_shimmer,vfx,,蛇鳞微闪,策划,draft,VFX/Combat/Unit/VFX_serpent_scale_shimmer,,2026-11-03
+VFX_serpent_tail_tele,vfx,,蛇甩尾预警,策划,draft,VFX/Combat/Unit/VFX_serpent_tail_tele,,2026-11-03
+VFX_serpent_venom_spit,vfx,,蛇毒涎,策划,draft,VFX/Combat/Unit/VFX_serpent_venom_spit,,2026-11-03
+VFX_spawn_shadow_drop,vfx,,影落入场,策划,draft,VFX/Combat/Spawn/VFX_spawn_shadow_drop,BI,2026-11-03
+VFX_death_ash_green,vfx,,绿灰死亡,策划,draft,VFX/Combat/Death/VFX_death_ash_green,KO,2026-11-03
+VFX_cs_tailfire_far,vfx,01,远尾火,策划,draft,VFX/Cutscene/VFX_cs_tailfire_far,CS_01,2026-11-03
+VFX_env_L01_cold_dust,vfx,L01,高山冷尘,场景,draft,VFX/Environment/VFX_env_L01_cold_dust,owner场景,2026-11-03
+VFX_env_L03_ember,vfx,L03,岩浆飞烬,场景,draft,VFX/Environment/VFX_env_L03_ember,owner场景,2026-11-03
+VFX_env_inn_lamp,vfx,01,驿站灯晕,场景,draft,VFX/Environment/VFX_env_inn_lamp,owner场景,2026-11-03
+SND_amb_L02_bridge,audio,L02,石桥氛围,策划,draft,Audio/SFX/Amb/SND_amb_L02_bridge,氛围床,2026-11-03
+SND_amb_L03_magma,audio,L03,岩浆氛围,策划,draft,Audio/SFX/Amb/SND_amb_L03_magma,氛围床,2026-11-03
+SND_amb_L04_grotto,audio,L04,洞府氛围,策划,draft,Audio/SFX/Amb/SND_amb_L04_grotto,氛围床,2026-11-03
+ART_concept_player_qin_portrait,art,,秦服剑士立绘·玄红旅装,策划,draft,docs/关卡概念/原画/角色_秦服剑士_男_21岁180.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_player_gold_dragon,art,,主角·金黄龙纹高颧骨立绘,策划,draft,docs/关卡概念/原画/主角_金黄龙纹_高颧骨.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_player_gold_dragon_3view,art,,主角·金黄龙纹高颧骨三视图,策划,draft,docs/关卡概念/原画/主角_金黄龙纹_高颧骨_三视图.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_player_gold_lowpoly,art,,主角·秦服剑士金黄龙纹低模,策划,draft,docs/关卡概念/原画/主角_秦服剑士_金黄龙纹_低模.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_player_heaven_eye,art,,主角·金黄龙纹天眼变体,策划,draft,docs/关卡概念/原画/主角_金黄龙纹_天眼.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_player_sword_pose,art,,主角·持秦王剑形金黄龙纹,策划,draft,docs/关卡概念/原画/主角_持秦王剑形_金黄龙纹.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_player_dragon_boots,art,,主角·龙形靴金黄龙纹,策划,draft,docs/关卡概念/原画/主角_龙形靴_金黄龙纹.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_prop_qin_sword,art,,道具·秦王剑形制低模,策划,draft,docs/关卡概念/原画/道具_秦王剑形制_低模.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_prop_dragon_boots_3view,art,,道具·龙形靴三视图,策划,draft,docs/关卡概念/原画/道具_龙形靴_三视图.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_ghost_3view,art,,NPC鬼怪三视图,策划,draft,docs/关卡概念/原画/NPC_鬼怪_三视图.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_ghost_armor_3view,art,,NPC半甲鬼怪三视图,策划,draft,docs/关卡概念/原画/NPC_鬼怪_半甲_三视图.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_ghost_armor_gold_lowpoly,art,,NPC半甲金边鬼怪低模,策划,draft,docs/关卡概念/原画/NPC_鬼怪_半甲金边_低模.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_ghost_shadow_seq,art,,NPC鬼怪移动序列影子,策划,draft,docs/关卡概念/原画/NPC_鬼怪_移动序列影子.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_ghost_shadow_closeup,art,,NPC鬼怪移动影子特写,策划,draft,docs/关卡概念/原画/NPC_鬼怪_移动影子特写.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_minotaur,art,,NPC牛头怪概念立绘,策划,draft,docs/关卡概念/原画/NPC_牛头怪_概念.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_minotaur_3view,art,,NPC牛头怪三视图,策划,draft,docs/关卡概念/原画/NPC_牛头怪_三视图.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_minotaur_broken_horn_lowpoly,art,,NPC牛头怪半甲破旧断角低模,策划,draft,docs/关卡概念/原画/NPC_牛头怪_半甲破旧断角_低模.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_serpent_full,art,,大BOSS蛇形无角全身,策划,draft,docs/关卡概念/原画/大BOSS_蛇形怪物_无角全身.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_serpent_3view,art,,大BOSS蛇形三视图,策划,draft,docs/关卡概念/原画/大BOSS_蛇形怪物_三视图.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L01_clear,art,L01,清晰关卡01·高山,策划,draft,docs/关卡概念/原画/清晰关卡01_高山.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L02_clear,art,L02,清晰关卡02·石桥,策划,draft,docs/关卡概念/原画/清晰关卡02_石桥.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L03_clear,art,L03,清晰关卡03·岩浆,策划,draft,docs/关卡概念/原画/清晰关卡03_岩浆.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L04_clear,art,L04,清晰关卡04·洞府,策划,draft,docs/关卡概念/原画/清晰关卡04_洞府.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L01_level,art,L01,关卡01·高山,策划,draft,docs/关卡概念/原画/关卡01_高山.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L02_level,art,L02,关卡02·石桥,策划,draft,docs/关卡概念/原画/关卡02_石桥.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L03_level,art,L03,关卡03·岩浆,策划,draft,docs/关卡概念/原画/关卡03_岩浆.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L04_level,art,L04,关卡04·洞府,策划,draft,docs/关卡概念/原画/关卡04_洞府.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L01_45,art,L01,45度01·高山,策划,draft,docs/关卡概念/原画/45度01_高山.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L02_45,art,L02,45度02·石桥,策划,draft,docs/关卡概念/原画/45度02_石桥.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L03_45,art,L03,45度03·岩浆,策划,draft,docs/关卡概念/原画/45度03_岩浆.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L04_45,art,L04,45度04·洞府,策划,draft,docs/关卡概念/原画/45度04_洞府.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L01_closed,art,L01,封闭关卡第一层·高山,策划,draft,docs/关卡概念/原画/封闭关卡_第一层_高山.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L02_closed,art,L02,封闭关卡第二层·石桥,策划,draft,docs/关卡概念/原画/封闭关卡_第二层_石桥.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L01_3view_pavilion,art,L01,三视图01·高山亭,策划,draft,docs/关卡概念/原画/三视图01_高山亭.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L02_3view_gate,art,L02,三视图02·石桥门楼,策划,draft,docs/关卡概念/原画/三视图02_石桥门楼.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L03_3view_seal,art,L03,三视图03·岩浆封印门,策划,draft,docs/关卡概念/原画/三视图03_岩浆封印门.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L04_3view_altar,art,L04,三视图04·洞府祭坛,策划,draft,docs/关卡概念/原画/三视图04_洞府祭坛.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L01_props,art,L01,细分01·高山建筑道具,策划,draft,docs/关卡概念/原画/细分01_高山建筑道具.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L02_props,art,L02,细分02·石桥建筑道具,策划,draft,docs/关卡概念/原画/细分02_石桥建筑道具.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L03_props,art,L03,细分03·岩浆建筑道具,策划,draft,docs/关卡概念/原画/细分03_岩浆建筑道具.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L04_props,art,L04,细分04·洞府建筑道具,策划,draft,docs/关卡概念/原画/细分04_洞府建筑道具.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_layers_overview,art,L01-L04,四层连通总览,策划,draft,docs/关卡概念/原画/四层连通总览.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_blockout_value,art,L01-L04,简化体块·四层明暗总览,策划,draft,docs/关卡概念/原画/简化体块_四层明暗总览.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_blockout_layers,art,L01-L04,简化体块·明暗分图层,策划,draft,docs/关卡概念/原画/简化体块_明暗分图层.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L01_fourzone_gujian,art,L01-L04,四区关卡概念·古剑同调,策划,draft,docs/关卡概念/原画/L01_四区关卡概念原画_古剑同调.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+ART_concept_L01_grotto_interior_gujian,art,L04,封闭洞府内景·古剑同调,策划,draft,docs/关卡概念/原画/L01_封闭洞府内景概念原画_古剑同调.jpg,概念原画；详见 docs/美术/美术资源总表.csv,2026-11-04
+SND_foot_dirt,audio,,土地脚步,策划,draft,Audio/SFX/World/SND_foot_dirt,土/沙轻步；设计文档已列,2026-11-04
+SND_door_wood,audio,,木门开合,策划,draft,Audio/SFX/World/SND_door_wood,驿站/厢房木门,2026-11-04
+SND_box_open,audio,,匣开,策划,draft,Audio/SFX/World/SND_box_open,伪匣/线索匣,2026-11-04
+VO_dlg_01_host_greet,audio,,掌柜短句·招呼,策划,draft,Audio/VO/VO_dlg_01_host_greet,可选；无VO仅字幕；draft扩展,2026-11-04
+VO_beast_name_serpent,audio,,点名·化蛇/巴蛇,策划,draft,Audio/VO/VO_beast_name_serpent,Boss首次点名；KO可短尾复用,2026-11-04
+SND_ui_confirm,audio,,UI确认,策划,draft,Audio/SFX/UI/SND_ui_confirm,菜单确认短音；不随战斗巨幅抬,2026-11-04
+SND_ui_cancel,audio,,UI取消,策划,draft,Audio/SFX/UI/SND_ui_cancel,取消/返回,2026-11-04
+SND_ui_evidence,audio,,证据获得提示,策划,draft,Audio/SFX/UI/SND_ui_evidence,检视证据短提示,2026-11-04
+ANIM_ghost_idle,anim,,鬼怪待机,策划,draft,Animations/Ghost/ANIM_ghost_idle,clip 2.00s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_alert,anim,,鬼怪警觉,策划,draft,Animations/Ghost/ANIM_ghost_alert,clip 1.00s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_move_rise,anim,,鬼怪起浮,策划,draft,Animations/Ghost/ANIM_ghost_move_rise,clip 0.40s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_move_glide,anim,,鬼怪滑行,策划,draft,Animations/Ghost/ANIM_ghost_move_glide,clip 0.80s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_move_lunge,anim,,鬼怪扑跃衔接,策划,draft,Animations/Ghost/ANIM_ghost_move_lunge,clip 0.35s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_atk_claw,anim,,鬼怪利爪,策划,draft,Animations/Ghost/ANIM_ghost_atk_claw,clip 0.72s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_atk_claw2,anim,,鬼怪双爪,策划,draft,Animations/Ghost/ANIM_ghost_atk_claw2,clip 0.80s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_atk_pounce,anim,,鬼怪影扑,策划,draft,Animations/Ghost/ANIM_ghost_atk_pounce,clip 1.00s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_hit,anim,,鬼怪受击,策划,draft,Animations/Ghost/ANIM_ghost_hit,clip 0.40s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_stun,anim,,鬼怪硬直,策划,draft,Animations/Ghost/ANIM_ghost_stun,clip 1.20s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_death,anim,,鬼怪死亡,策划,draft,Animations/Ghost/ANIM_ghost_death,clip 2.00s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_intro,anim,,鬼怪入场,策划,draft,Animations/Ghost/ANIM_ghost_intro,clip 2.00s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_armor_block,anim,,半甲格挡反应,策划,draft,Animations/Ghost/ANIM_ghost_armor_block,clip 0.50s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_armor_claw,anim,,半甲甲爪,策划,draft,Animations/Ghost/ANIM_ghost_armor_claw,clip 0.82s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_armor_pounce,anim,,半甲沉扑,策划,draft,Animations/Ghost/ANIM_ghost_armor_pounce,clip 1.13s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_ghost_armor_pulse,anim,,半甲甲振,策划,draft,Animations/Ghost/ANIM_ghost_armor_pulse,clip 0.85s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_idle,anim,,牛头待机,策划,draft,Animations/Minotaur/ANIM_mino_idle,clip 2.00s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_alert,anim,,牛头警觉,策划,draft,Animations/Minotaur/ANIM_mino_alert,clip 1.20s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_move,anim,,牛头走近,策划,draft,Animations/Minotaur/ANIM_mino_move,clip 1.00s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_atk_axe_h,anim,,牛头斧横,策划,draft,Animations/Minotaur/ANIM_mino_atk_axe_h,clip 1.05s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_atk_axe_v,anim,,牛头斧砸,策划,draft,Animations/Minotaur/ANIM_mino_atk_axe_v,clip 1.12s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_charge_windup,anim,,牛头冲撞抬腿,策划,draft,Animations/Minotaur/ANIM_mino_charge_windup,clip 0.45s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_charge_loop,anim,,牛头冲刺,策划,draft,Animations/Minotaur/ANIM_mino_charge_loop,clip 0.60s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_charge_end,anim,,牛头冲撞结束,策划,draft,Animations/Minotaur/ANIM_mino_charge_end,clip 0.40s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_atk_chain,anim,,牛头链扫,策划,draft,Animations/Minotaur/ANIM_mino_atk_chain,clip 1.15s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_hit,anim,,牛头受击,策划,draft,Animations/Minotaur/ANIM_mino_hit,clip 0.45s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_stun,anim,,牛头硬直,策划,draft,Animations/Minotaur/ANIM_mino_stun,clip 1.50s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_death,anim,,牛头死亡,策划,draft,Animations/Minotaur/ANIM_mino_death,clip 2.50s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_mino_intro,anim,,牛头入场,策划,draft,Animations/Minotaur/ANIM_mino_intro,clip 3.00s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_idle_coil,anim,,蛇盘绕待机,策划,draft,Animations/Serpent/ANIM_serpent_idle_coil,clip 3.00s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_alert_rise,anim,,蛇昂首警觉,策划,draft,Animations/Serpent/ANIM_serpent_alert_rise,clip 1.50s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_move_slither,anim,,蛇游走,策划,draft,Animations/Serpent/ANIM_serpent_move_slither,clip 2.00s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_atk_bite,anim,,蛇昂咬,策划,draft,Animations/Serpent/ANIM_serpent_atk_bite,clip 1.00s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_atk_tail,anim,,蛇甩尾,策划,draft,Animations/Serpent/ANIM_serpent_atk_tail,clip 1.10s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_atk_coil_crush,anim,,蛇盘压,策划,draft,Animations/Serpent/ANIM_serpent_atk_coil_crush,clip 1.40s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_atk_spit,anim,,蛇毒涎,策划,draft,Animations/Serpent/ANIM_serpent_atk_spit,clip 1.35s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_atk_wave,anim,,蛇躯波,策划,draft,Animations/Serpent/ANIM_serpent_atk_wave,clip 1.55s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_hit,anim,,蛇受击,策划,draft,Animations/Serpent/ANIM_serpent_hit,clip 0.50s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_stun,anim,,蛇硬直,策划,draft,Animations/Serpent/ANIM_serpent_stun,clip 1.80s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_death,anim,,蛇死亡,策划,draft,Animations/Serpent/ANIM_serpent_death,clip 3.50s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_intro,anim,,蛇入场BI,策划,draft,Animations/Serpent/ANIM_serpent_intro,clip 8.00s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_serpent_phase,anim,,蛇转阶段,策划,draft,Animations/Serpent/ANIM_serpent_phase,clip 4.00s loop=N pri=P1；见动画动作_播放时间与规格,2026-11-04
+ANIM_idle_explore,anim,,剑客探索待机,策划,draft,Animations/Player/ANIM_idle_explore,clip 2.00s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_idle_combat,anim,,剑客战斗待机,策划,draft,Animations/Player/ANIM_idle_combat,clip 2.00s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_walk,anim,,剑客走,策划,draft,Animations/Player/ANIM_walk,clip 1.00s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_run,anim,,剑客跑,策划,draft,Animations/Player/ANIM_run,clip 0.80s loop=Y pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_slash_1,anim,,剑客斩1,策划,draft,Animations/Player/ANIM_slash_1,clip 0.55s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_slash_2,anim,,剑客斩2,策划,draft,Animations/Player/ANIM_slash_2,clip 0.55s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_slash_3,anim,,剑客斩3,策划,draft,Animations/Player/ANIM_slash_3,clip 0.70s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_block,anim,,剑客格挡,策划,draft,Animations/Player/ANIM_block,clip 0.40s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_hit_L,anim,,剑客左受击,策划,draft,Animations/Player/ANIM_hit_L,clip 0.40s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_hit_R,anim,,剑客右受击,策划,draft,Animations/Player/ANIM_hit_R,clip 0.40s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_hit_Back,anim,,剑客背受击,策划,draft,Animations/Player/ANIM_hit_Back,clip 0.45s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04
+ANIM_death,anim,,剑客死亡,策划,draft,Animations/Player/ANIM_death,clip 2.50s loop=N pri=P0；见动画动作_播放时间与规格,2026-11-04

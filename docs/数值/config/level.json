@@ -1,0 +1,213 @@
+{
+  "schema": "VRgame.Config.Level",
+  "version": "v1-skeleton",
+  "_meta": {
+    "tableId": "level",
+    "displayName": "关卡表",
+    "layer": "frontend+backend",
+    "frontendKeys": ["displayName", "envPrefabRoot", "spawn", "lightingPreset", "comfortNotes"],
+    "backendKeys": ["levelId", "timeLimitSec", "allowRespawn", "respawnCount", "win", "lose", "questsRequired", "bossId", "economyRef", "enemySpawnPlan"],
+    "sourceOfTruth": [
+      "docs/策划/关卡设计.md",
+      "docs/策划/剧情关卡结构_VS.md",
+      "docs/关卡概念/四关场景模型清单.md",
+      "docs/数值/数值配置_后端_v1.json#levelEconomy"
+    ],
+    "idStyle": "LV_* / ENV_L0N_* / SP_* / V_* / F_*",
+    "fields": {
+      "levelId": "主键",
+      "displayName": "显示名",
+      "layerIndex": "1-4 四层；0=VS 驿站切片",
+      "theme": "mountain|bridge|magma|grotto|inn_vs",
+      "envPrefabRoot": "场景根 Prefab",
+      "spawn": "出生点与安全区",
+      "timeLimitSec": "0=不限时",
+      "win.modes": "V_BOSS|V_QUEST|V_TIME_QUEST",
+      "lose": "死亡/退出/超时",
+      "bossId": "关联 enemyBudget / character enemyRef",
+      "economyRef": "combat_numeric.levelEconomy.levelId",
+      "propIds": "本关关键物件 PROP_*",
+      "connectedNext": "下一关 levelId"
+    }
+  },
+  "rows": [
+    {
+      "levelId": "LV_inn_night",
+      "displayName": "残简三声",
+      "layerIndex": 0,
+      "theme": "inn_vs",
+      "envPrefabRoot": "ENV_VS_InnNight",
+      "spawn": {
+        "spawnPointId": "SP_birth",
+        "safeZone": true
+      },
+      "timeLimitSec": 0,
+      "allowRespawn": true,
+      "respawnCount": 3,
+      "win": {
+        "modes": ["V_QUEST", "V_BOSS"],
+        "requireAll": false
+      },
+      "lose": {
+        "onPlayerDeath": true,
+        "onQuit": true,
+        "onTimeoutIncomplete": true
+      },
+      "questsRequired": ["QM5"],
+      "bossId": "B_host",
+      "economyRef": "LV_inn_night",
+      "lightingPreset": "LIT_Inn_MoonNight",
+      "propIds": [
+        "PROP_TeleportPad",
+        "PROP_StoneLantern_A",
+        "PROP_L02_BambooSlips"
+      ],
+      "connectedNext": "LV_L01_mountain",
+      "notes": "Vertical Slice；15–25 分钟复杂叙事；经济见 levelEconomy"
+    },
+    {
+      "levelId": "LV_L01_mountain",
+      "displayName": "高山",
+      "layerIndex": 1,
+      "theme": "mountain",
+      "envPrefabRoot": "ENV_L01_Mountain",
+      "spawn": {
+        "spawnPointId": "SP_L01_cave_mouth",
+        "safeZone": true
+      },
+      "timeLimitSec": 0,
+      "allowRespawn": true,
+      "respawnCount": 3,
+      "win": {
+        "modes": ["V_QUEST"],
+        "requireAll": false
+      },
+      "lose": {
+        "onPlayerDeath": true,
+        "onQuit": true,
+        "onTimeoutIncomplete": false
+      },
+      "questsRequired": [],
+      "bossId": null,
+      "economyRef": null,
+      "lightingPreset": "LIT_L01_Mountain_SkyCold",
+      "propIds": [
+        "PROP_TeleportPad",
+        "PROP_L01_PineTree",
+        "PROP_L01_WindChime",
+        "PROP_L01_PrayerTablet"
+      ],
+      "connectedNext": "LV_L02_bridge",
+      "notes": "四层 L1；上亮下暗；ENV_L01_*"
+    },
+    {
+      "levelId": "LV_L02_bridge",
+      "displayName": "石桥",
+      "layerIndex": 2,
+      "theme": "bridge",
+      "envPrefabRoot": "ENV_L02_Bridge",
+      "spawn": {
+        "spawnPointId": "SP_L02_paifang",
+        "safeZone": true
+      },
+      "timeLimitSec": 900,
+      "allowRespawn": true,
+      "respawnCount": 2,
+      "win": {
+        "modes": ["V_QUEST", "V_TIME_QUEST"],
+        "requireAll": false
+      },
+      "lose": {
+        "onPlayerDeath": true,
+        "onQuit": true,
+        "onTimeoutIncomplete": true
+      },
+      "questsRequired": [],
+      "bossId": "E_double",
+      "economyRef": "LV_example",
+      "lightingPreset": "LIT_L02_Bridge_ColdSpot",
+      "propIds": [
+        "PROP_TeleportPad",
+        "PROP_L02_GuardianLion",
+        "PROP_L02_OilLamp",
+        "PROP_L02_BambooSlips",
+        "PROP_L02_Door_Double"
+      ],
+      "connectedNext": "LV_L03_magma",
+      "notes": "四层 L2；冷长光斑+暖引导"
+    },
+    {
+      "levelId": "LV_L03_magma",
+      "displayName": "岩浆",
+      "layerIndex": 3,
+      "theme": "magma",
+      "envPrefabRoot": "ENV_L03_Magma",
+      "spawn": {
+        "spawnPointId": "SP_L03_basalt",
+        "safeZone": true
+      },
+      "timeLimitSec": 0,
+      "allowRespawn": true,
+      "respawnCount": 2,
+      "win": {
+        "modes": ["V_BOSS", "V_QUEST"],
+        "requireAll": false
+      },
+      "lose": {
+        "onPlayerDeath": true,
+        "onQuit": true,
+        "onTimeoutIncomplete": false
+      },
+      "questsRequired": [],
+      "bossId": "B_bamboo",
+      "economyRef": null,
+      "lightingPreset": "LIT_L03_Magma_BottomGlow",
+      "propIds": [
+        "PROP_TeleportPad",
+        "PROP_L03_Brazier",
+        "PROP_L03_ChainBridge",
+        "PROP_L03_IronRail",
+        "PROP_L03_TalismanBanner"
+      ],
+      "connectedNext": "LV_L04_grotto",
+      "notes": "四层 L3；底光高饱和暖；注意晕动"
+    },
+    {
+      "levelId": "LV_L04_grotto",
+      "displayName": "洞府",
+      "layerIndex": 4,
+      "theme": "grotto",
+      "envPrefabRoot": "ENV_L04_Grotto",
+      "spawn": {
+        "spawnPointId": "SP_L04_hall",
+        "safeZone": true
+      },
+      "timeLimitSec": 0,
+      "allowRespawn": true,
+      "respawnCount": 3,
+      "win": {
+        "modes": ["V_BOSS", "V_QUEST"],
+        "requireAll": false
+      },
+      "lose": {
+        "onPlayerDeath": true,
+        "onQuit": true,
+        "onTimeoutIncomplete": false
+      },
+      "questsRequired": [],
+      "bossId": "B_shrine",
+      "economyRef": null,
+      "lightingPreset": "LIT_L04_Grotto_AltarWarm",
+      "propIds": [
+        "PROP_TeleportPad",
+        "PROP_L04_AltarTable",
+        "PROP_L04_BambooSlips_Stack",
+        "PROP_L04_IncenseBurner",
+        "PROP_L04_HangingLantern",
+        "PROP_L04_StoneLantern"
+      ],
+      "connectedNext": null,
+      "notes": "四层 L4；中心亮四角沉；章末锚点"
+    }
+  ]
+}

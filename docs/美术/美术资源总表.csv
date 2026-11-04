@@ -1,0 +1,47 @@
+id,type,chapter_or_layer,cn_name,file_path,format,resolution_note,style_notes,usage,owner,status,updated
+ART_concept_player_qin_portrait,concept,,秦服剑士立绘·玄红旅装,docs/关卡概念/原画/角色_秦服剑士_男_21岁180.jpg,jpg,864x1152,男·约21岁·身高180锚；玄黑劲装+朱红内衬/腰带；左肩叠甲、腕甲、青铜饕餮带扣；持直剑；面容清峻发髻玄冠。材质：做旧皮革/青铜/麻布毛边。气质：秦驿夜行斩妖剑客（旅装变体，与金黄龙纹甲并存）。,主角立绘参考；CHAR_player_swordsman 造型A,关卡概念,draft,2026-11-04
+ART_concept_player_gold_dragon,concept,,主角·金黄龙纹高颧骨立绘,docs/关卡概念/原画/主角_金黄龙纹_高颧骨.jpg,jpg,864x1152,低模棱面风；金/暗铜甲；高颧骨锐脸；左肩龙首甲、饕餮带、垂龙纹蔽膝、龙首靴；持秦王剑形；黑底。材质：暗金金属+硬折披风。正式斩妖甲定稿主参考。,主角正式甲造型B；VR avatar 低模目标,关卡概念,draft,2026-11-04
+ART_concept_player_gold_dragon_3view,concept,,主角·金黄龙纹高颧骨三视图,docs/关卡概念/原画/主角_金黄龙纹_高颧骨_三视图.jpg,jpg,1280x720,正/侧/背三视图；同金黄龙纹甲；比例锁头身与披风轮廓；供建模对比例。,建模三视图,关卡概念,draft,2026-11-04
+ART_concept_player_gold_lowpoly,concept,,主角·秦服剑士金黄龙纹低模,docs/关卡概念/原画/主角_秦服剑士_金黄龙纹_低模.jpg,jpg,864x1152,低多边形体块明确；金黄龙纹甲面片清晰；便于估面数与轮廓识别。,低模面数/轮廓验收,关卡概念,draft,2026-11-04
+ART_concept_player_heaven_eye,concept,,主角·金黄龙纹天眼变体,docs/关卡概念/原画/主角_金黄龙纹_天眼.jpg,jpg,864x1152,额前天眼（或天眼意象）变体；同金黄龙纹甲；强调山海经异能可读点，勿做成赛博HUD。,特异值/天眼演出可选皮,关卡概念,draft,2026-11-04
+ART_concept_player_sword_pose,concept,,主角·持秦王剑形金黄龙纹,docs/关卡概念/原画/主角_持秦王剑形_金黄龙纹.jpg,jpg,864x1152,持剑姿态特写；剑形制对齐 PROP 秦王剑；甲色金黄龙纹。,武器握持/待机姿态,关卡概念,draft,2026-11-04
+ART_concept_player_dragon_boots,concept,,主角·龙形靴金黄龙纹,docs/关卡概念/原画/主角_龙形靴_金黄龙纹.jpg,jpg,864x1152,全身强调龙首靴与下摆；金黄龙纹连贯；靴口龙吻含足尖。,靴+下身比例,关卡概念,draft,2026-11-04
+ART_concept_prop_qin_sword,concept,,道具·秦王剑形制低模,docs/关卡概念/原画/道具_秦王剑形制_低模.jpg,jpg,1280x720,直刃秦剑低模；青铜护手云纹/兽纹；刃截面清晰。材质古铜+钢灰。VR：手持碰撞简盒，刃长约玩家臂展可读。,PROP 武器主参考；握持对齐主角,关卡概念,draft,2026-11-04
+ART_concept_prop_dragon_boots_3view,concept,,道具·龙形靴三视图,docs/关卡概念/原画/道具_龙形靴_三视图.jpg,jpg,1280x720,龙首靴正侧背；鳞片与口吻结构；暗金。,PROP/角色靴建模,关卡概念,draft,2026-11-04
+ART_concept_ghost_3view,concept,,NPC鬼怪三视图,docs/关卡概念/原画/NPC_鬼怪_三视图.jpg,jpg,1280x720,半透明女形怨影；冷青灰；下摆雾化无实脚；利爪；漂浮。N_ghost 体态锁定。,N_ghost 建模三视图,关卡概念,draft,2026-11-04
+ART_concept_ghost_armor_3view,concept,,NPC半甲鬼怪三视图,docs/关卡概念/原画/NPC_鬼怪_半甲_三视图.jpg,jpg,1280x720,同族+半甲；甲缘可读；N_ghost_armor。,N_ghost_armor 三视图,关卡概念,draft,2026-11-04
+ART_concept_ghost_armor_gold_lowpoly,concept,,NPC半甲金边鬼怪低模,docs/关卡概念/原画/NPC_鬼怪_半甲金边_低模.jpg,jpg,864x1152,棱面低模；冰白/冷灰袍碎裂漂浮；胸肩暗青铜甲；饕餮带+垂链；黄瞳无眸；石殿烛火背景。材质：晶石碎面+古铜。,N_ghost_armor 低模主参考,关卡概念,draft,2026-11-04
+ART_concept_ghost_shadow_seq,concept,,NPC鬼怪移动序列影子,docs/关卡概念/原画/NPC_鬼怪_移动序列影子.jpg,jpg,1280x720,三段滑翔：起浮→前倾滑→扑杀前倾；地面影滞后0.1–0.2s；扑击影拉长（ShadowStretch）。,动画/预警教学；对齐 ANIM_ghost_move_*,关卡概念,draft,2026-11-04
+ART_concept_ghost_shadow_closeup,concept,,NPC鬼怪移动影子特写,docs/关卡概念/原画/NPC_鬼怪_移动影子特写.jpg,jpg,1280x720,影与身体错位特写；强调可读预兆，忌瞬闪。,影子系统说明图,关卡概念,draft,2026-11-04
+ART_concept_minotaur,concept,,NPC牛头怪概念立绘,docs/关卡概念/原画/NPC_牛头怪_概念.jpg,jpg,864x1152,牛首人身精英；石灰肤+黑鬃；青铜兽面盔全角；胸链交叉；饕餮带；巨斧；蹄铁；碎链动能。色：暗灰+古铜+红瞳。VR身高约2.8–3.5m威压。,E_minotaur 概念主图,关卡概念,draft,2026-11-04
+ART_concept_minotaur_3view,concept,,NPC牛头怪三视图,docs/关卡概念/原画/NPC_牛头怪_三视图.jpg,jpg,1280x720,正侧背；斧/链比例；蹄铁轮廓。,E_minotaur 建模,关卡概念,draft,2026-11-04
+ART_concept_minotaur_broken_horn_lowpoly,concept,,NPC牛头怪半甲破旧断角低模,docs/关卡概念/原画/NPC_牛头怪_半甲破旧断角_低模.jpg,jpg,864x1152,断角变体+破旧半甲；低模面片；关卡门卫磨损感。,E_minotaur 低模/断角皮,关卡概念,draft,2026-11-04
+ART_concept_serpent_full,concept,,大BOSS蛇形无角全身,docs/关卡概念/原画/大BOSS_蛇形怪物_无角全身.jpg,jpg,864x1152,无角大蛇盘S；炭灰几何鳞+金腹甲；赤红鬣；橙瞳；岩浆底光洞窟。化蛇/巴蛇意象。舞台级体量。,B_serpent 概念主图,关卡概念,draft,2026-11-04
+ART_concept_serpent_3view,concept,,大BOSS蛇形三视图,docs/关卡概念/原画/大BOSS_蛇形怪物_三视图.jpg,jpg,1280x720,盘绕/昂首比例；鬣与腹甲分区。,B_serpent 建模,关卡概念,draft,2026-11-04
+ART_concept_L01_clear,concept,L01,清晰关卡01·高山,docs/关卡概念/原画/清晰关卡01_高山.jpg,jpg,1280x720,洞口望月下山径：前景岩洞火把、石桥木栏、盘山阶、峰顶亭、黄山松、瀑布雾、满月冷蓝vs烛火暖橙。ENV_L01_Mountain。,L01 主氛围概念,关卡概念,draft,2026-11-04
+ART_concept_L02_clear,concept,L02,清晰关卡02·石桥,docs/关卡概念/原画/清晰关卡02_石桥.jpg,jpg,1280x720,石桥厅：断崖桥面、门楼、水雾桥隙风；冷石与夜雾。ENV_L02_Bridge。,L02 主氛围,关卡概念,draft,2026-11-04
+ART_concept_L03_clear,concept,L03,清晰关卡03·岩浆,docs/关卡概念/原画/清晰关卡03_岩浆.jpg,jpg,1280x720,岩浆窟：玄武裂隙、熔岩脉、封印门暖底光；压迫热感但仍控眩光。ENV_L03_Magma。,L03 主氛围,关卡概念,draft,2026-11-04
+ART_concept_L04_clear,concept,L04,清晰关卡04·洞府,docs/关卡概念/原画/清晰关卡04_洞府.jpg,jpg,1280x720,洞府殿：暖烛、祭坛、回声空间；终局庄严。ENV_L04_Grotto。,L04 主氛围,关卡概念,draft,2026-11-04
+ART_concept_L01_level,concept,L01,关卡01·高山,docs/关卡概念/原画/关卡01_高山.jpg,jpg,1280x720,高山层构图变体；同L01冷月山径气质。,L01 构图备选,关卡概念,draft,2026-11-04
+ART_concept_L02_level,concept,L02,关卡02·石桥,docs/关卡概念/原画/关卡02_石桥.jpg,jpg,1280x720,石桥层构图变体。,L02 构图备选,关卡概念,draft,2026-11-04
+ART_concept_L03_level,concept,L03,关卡03·岩浆,docs/关卡概念/原画/关卡03_岩浆.jpg,jpg,1280x720,岩浆层构图变体。,L03 构图备选,关卡概念,draft,2026-11-04
+ART_concept_L04_level,concept,L04,关卡04·洞府,docs/关卡概念/原画/关卡04_洞府.jpg,jpg,1280x720,洞府层构图变体。,L04 构图备选,关卡概念,draft,2026-11-04
+ART_concept_L01_45,concept,L01,45度01·高山,docs/关卡概念/原画/45度01_高山.jpg,jpg,1280x720,45°俯瞰高山层空间体量与流线。,L01 灰模对照/灯光,关卡概念,draft,2026-11-04
+ART_concept_L02_45,concept,L02,45度02·石桥,docs/关卡概念/原画/45度02_石桥.jpg,jpg,1280x720,45°俯瞰石桥厅体量。,L02 灰模对照,关卡概念,draft,2026-11-04
+ART_concept_L03_45,concept,L03,45度03·岩浆,docs/关卡概念/原画/45度03_岩浆.jpg,jpg,1280x720,45°俯瞰岩浆窟体量与熔岩路径。,L03 灰模对照,关卡概念,draft,2026-11-04
+ART_concept_L04_45,concept,L04,45度04·洞府,docs/关卡概念/原画/45度04_洞府.jpg,jpg,1280x720,45°俯瞰洞府殿体量。,L04 灰模对照,关卡概念,draft,2026-11-04
+ART_concept_L01_closed,concept,L01,封闭关卡第一层·高山,docs/关卡概念/原画/封闭关卡_第一层_高山.jpg,jpg,1280x720,封闭关视角·高山层；强调层间封闭与传送门位。,四层闭环 L01,关卡概念,draft,2026-11-04
+ART_concept_L02_closed,concept,L02,封闭关卡第二层·石桥,docs/关卡概念/原画/封闭关卡_第二层_石桥.jpg,jpg,1280x720,封闭关视角·石桥层。,四层闭环 L02,关卡概念,draft,2026-11-04
+ART_concept_L01_3view_pavilion,concept,L01,三视图01·高山亭,docs/关卡概念/原画/三视图01_高山亭.jpg,jpg,1280x720,峰顶歇山亭正侧背；深瓦暖内光。PROP/ENV 亭。,L01 关键建筑,关卡概念,draft,2026-11-04
+ART_concept_L02_3view_gate,concept,L02,三视图02·石桥门楼,docs/关卡概念/原画/三视图02_石桥门楼.jpg,jpg,1280x720,石桥门楼三视图；牛头关卡节点可读。,L02 门楼/精英门,关卡概念,draft,2026-11-04
+ART_concept_L03_3view_seal,concept,L03,三视图03·岩浆封印门,docs/关卡概念/原画/三视图03_岩浆封印门.jpg,jpg,1280x720,岩浆封印门三视图；符纹+熔岩光。,L03 机关门,关卡概念,draft,2026-11-04
+ART_concept_L04_3view_altar,concept,L04,三视图04·洞府祭坛,docs/关卡概念/原画/三视图04_洞府祭坛.jpg,jpg,1280x720,洞府祭坛三视图；Boss舞台锚。,L04 祭坛/BI舞台,关卡概念,draft,2026-11-04
+ART_concept_L01_props,concept,L01,细分01·高山建筑道具,docs/关卡概念/原画/细分01_高山建筑道具.jpg,jpg,1280x720,高山层柱、灯、栏、松、石阶等PROP拆分。,L01 PROP清单,关卡概念,draft,2026-11-04
+ART_concept_L02_props,concept,L02,细分02·石桥建筑道具,docs/关卡概念/原画/细分02_石桥建筑道具.jpg,jpg,1280x720,石桥层桥板、门、兽面饰等。,L02 PROP清单,关卡概念,draft,2026-11-04
+ART_concept_L03_props,concept,L03,细分03·岩浆建筑道具,docs/关卡概念/原画/细分03_岩浆建筑道具.jpg,jpg,1280x720,岩浆层封印柱、熔岩渠、灼岩。,L03 PROP清单,关卡概念,draft,2026-11-04
+ART_concept_L04_props,concept,L04,细分04·洞府建筑道具,docs/关卡概念/原画/细分04_洞府建筑道具.jpg,jpg,1280x720,洞府层烛台、祭器、帷幔。,L04 PROP清单,关卡概念,draft,2026-11-04
+ART_concept_layers_overview,concept,L01-L04,四层连通总览,docs/关卡概念/原画/四层连通总览.jpg,jpg,720x1280,竖构图四层竖井式连通；传送/落差关系。,总览流线,关卡概念,draft,2026-11-04
+ART_concept_blockout_value,concept,L01-L04,简化体块·四层明暗总览,docs/关卡概念/原画/简化体块_四层明暗总览.jpg,jpg,720x1280,体块明暗：冷高山→桥→岩浆热→洞府暖。,灯光/灰模明暗,关卡概念,draft,2026-11-04
+ART_concept_blockout_layers,concept,L01-L04,简化体块·明暗分图层,docs/关卡概念/原画/简化体块_明暗分图层.jpg,jpg,1280x720,分层明暗板；指导 LIT_ 冷暖包。,LIT 预设参考,关卡概念,draft,2026-11-04
+ART_concept_L01_fourzone_gujian,concept,L01-L04,四区关卡概念·古剑同调,docs/关卡概念/原画/L01_四区关卡概念原画_古剑同调.jpg,jpg,1280x720,左冷月山雾、右岩浆裂谷、中石桥+洞府门；冷暖对切；古剑同调山海气。四层气质一张总览。,四层气质总图；非驿站七块,关卡概念,draft,2026-11-04
+ART_concept_L01_grotto_interior_gujian,concept,L04,封闭洞府内景·古剑同调,docs/关卡概念/原画/L01_封闭洞府内景概念原画_古剑同调.jpg,jpg,1280x720,洞府内景封闭感；烛火暖、石刻、祭坛纵深；古剑同调。文件名含L01为系列编号，语义属洞府内景。,L04 内景深化,关卡概念,draft,2026-11-04

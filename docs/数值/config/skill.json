@@ -1,0 +1,174 @@
+{
+  "schema": "VRgame.Config.Skill",
+  "version": "v1-skeleton",
+  "_meta": {
+    "tableId": "skill",
+    "displayName": "技能表",
+    "layer": "frontend+backend",
+    "frontendKeys": ["displayName", "skillType", "shape", "animation", "vfx", "sfx", "ui", "tags"],
+    "backendKeys": ["skillId", "costs", "cooldown", "chargeTime", "damage", "hitbox", "projectile", "aoe", "unbreakable"],
+    "sourceOfTruth": [
+      "docs/策划/战斗技能配置_示例.json",
+      "docs/策划/战斗技能配置结构.md",
+      "docs/数值/数值配置_前端_v1.json#skillNumeric"
+    ],
+    "idStyle": "SK_* / DMG_* / ANIM_* / VFX_* / SFX_* / UI_icon_*",
+    "fields": {
+      "skillId": "主键",
+      "displayName": "显示名",
+      "skillType": "BasicAttack|ActiveSkill|ChargeSkill",
+      "shape": "meleeBox|line|sin|parabola|selfAoE",
+      "costs": "mp,sp,gp",
+      "cooldown": "秒",
+      "chargeTime": "蓄力秒；0=无",
+      "damage.formulaId": "关联 combat_numeric.damageFormulas；倍率以数值表为准",
+      "numericOverrideRef": "可选指向 combat_numeric.skillNumeric 行"
+    },
+    "notes": "表现字段以本表/技能示例为准；mp/cd/mul 冲突时以 combat_numeric.skillNumeric 为权威。"
+  },
+  "rows": [
+    {
+      "skillId": "SK_slash",
+      "displayName": "斩击",
+      "skillType": "BasicAttack",
+      "shape": "meleeBox",
+      "lockType": "none",
+      "unbreakable": false,
+      "costs": { "mp": 0, "sp": 0, "gp": 0 },
+      "cooldown": 0.0,
+      "chargeTime": 0.0,
+      "damage": {
+        "formulaId": "DMG_melee_light",
+        "multiplier": 1.0,
+        "element": "none",
+        "canCrit": true,
+        "comboMul": [1.0, 1.1, 1.35]
+      },
+      "ui": {
+        "icon": "UI_icon_slash",
+        "showCD": false,
+        "binding": "BasicSkill"
+      },
+      "tags": ["melee", "basic"],
+      "notes": "基础武器盒斩击；三段连招"
+    },
+    {
+      "skillId": "SK_tianhui_wuying",
+      "displayName": "天灰无影",
+      "skillType": "ChargeSkill",
+      "shape": "selfAoE",
+      "lockType": "none",
+      "unbreakable": false,
+      "costs": { "mp": 30, "sp": 0, "gp": 100 },
+      "cooldown": 12.0,
+      "chargeTime": 3.0,
+      "aoe": {
+        "center": "self",
+        "shape": "circle",
+        "radius": 3.5,
+        "angle": 360,
+        "height": 2.0
+      },
+      "damage": {
+        "formulaId": "DMG_ult_slash",
+        "multiplier": 1.35,
+        "element": "shadow",
+        "canCrit": true,
+        "hitCount": 5
+      },
+      "ui": {
+        "icon": "UI_icon_tianhui",
+        "showCD": true,
+        "binding": "ChargeSkill"
+      },
+      "tags": ["aoe", "charge", "ultimate"],
+      "notes": "GP+MP 双条件；hitCount 以数值表为准"
+    },
+    {
+      "skillId": "SK_line_swordqi",
+      "displayName": "剑气直线",
+      "skillType": "ActiveSkill",
+      "shape": "line",
+      "lockType": "single",
+      "unbreakable": true,
+      "costs": { "mp": 15, "sp": 0, "gp": 0 },
+      "cooldown": 5.0,
+      "chargeTime": 0.0,
+      "projectile": {
+        "path": "line",
+        "speed": 18.0,
+        "length": 12.0,
+        "width": 0.6,
+        "pierce": true,
+        "maxTargets": 5,
+        "lifeTime": 1.2
+      },
+      "damage": {
+        "formulaId": "DMG_line",
+        "multiplier": 1.2,
+        "element": "none",
+        "canCrit": true
+      },
+      "ui": {
+        "icon": "UI_icon_line",
+        "showCD": true,
+        "binding": "Skill1"
+      },
+      "tags": ["line", "projectile", "lock"]
+    },
+    {
+      "skillId": "SK_sin_wave",
+      "displayName": "涟波剑路",
+      "skillType": "ActiveSkill",
+      "shape": "sin",
+      "lockType": "none",
+      "unbreakable": false,
+      "costs": { "mp": 18, "sp": 5, "gp": 0 },
+      "cooldown": 7.0,
+      "chargeTime": 0.0,
+      "damage": {
+        "formulaId": "DMG_sin",
+        "multiplier": 1.25,
+        "element": "none",
+        "canCrit": true
+      },
+      "ui": {
+        "icon": "UI_icon_sin",
+        "showCD": true,
+        "binding": "Skill2"
+      },
+      "tags": ["sin", "projectile"],
+      "notes": "mul 以数值 v1=1.25 为准（技能示例曾写 1.0）"
+    },
+    {
+      "skillId": "SK_parabola_fall",
+      "displayName": "月坠",
+      "skillType": "ActiveSkill",
+      "shape": "parabola",
+      "lockType": "single",
+      "unbreakable": true,
+      "costs": { "mp": 22, "sp": 0, "gp": 0 },
+      "cooldown": 8.0,
+      "chargeTime": 0.0,
+      "damage": {
+        "formulaId": "DMG_parabola",
+        "multiplier": 1.5,
+        "element": "none",
+        "canCrit": true
+      },
+      "aoe": {
+        "center": "impactPoint",
+        "shape": "circle",
+        "radius": 1.5,
+        "angle": 360,
+        "height": 2.0
+      },
+      "ui": {
+        "icon": "UI_icon_parabola",
+        "showCD": true,
+        "binding": "Skill3"
+      },
+      "tags": ["parabola", "lock", "aoe"]
+    }
+  ]
+}

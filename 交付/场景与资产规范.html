@@ -1,0 +1,122 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>场景与资产规范</title>
+<style>
+body{font-family:sans-serif;max-width:900px;margin:24px auto;padding:0 16px;line-height:1.5;color:#111}
+h1{font-size:1.6rem} h2{font-size:1.25rem;margin-top:1.4em} h3{font-size:1.1rem}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:0.92rem}
+th,td{border:1px solid #ccc;padding:6px 8px;vertical-align:top}
+th{background:#f3f3f3}
+.meta{color:#555;font-size:0.9rem}
+pre{background:#f6f6f6;padding:10px;overflow:auto}
+li{margin-left:1.2em}
+</style></head><body>
+<h1>场景与资产规范（首版草案）</h1>
+
+<p class="meta">岗位：VR场景制作 · 汇报 → 制作统筹  </p>
+<p class="meta">范围：PCVR · Unity · 古剑奇谭气质剧情关卡  </p>
+<p class="meta">状态：草案，重大项待用户拍板后升正式版</p>
+
+<h2>1. 目标</h2>
+
+<p>让首版 vertical slice 的场景可搭、可进工程、可戴上头显走通，且晕动友好、风格统一。</p>
+
+<h2>2. 尺度与舒适度（PCVR）</h2>
+
+<table>
+<tr><th>项</th><th>约定（草案）</th></tr>
+<tr><td>世界单位</td><td>1 unit = 1 米</td></tr>
+<tr><td>玩家眼高参考</td><td>约 1.6–1.7 m（坐/站均可；过场支持坐姿）</td></tr>
+<tr><td>移动</td><td>传送为主 + 有限滑步；禁止强制高速旋转</td></tr>
+<tr><td>通道最小净宽</td><td>≥ 1.2 m（手柄/碰撞友好）</td></tr>
+<tr><td>关键高度</td><td>重点互动点 0.9–1.4 m 眼平附近</td></tr>
+<tr><td>传送落点</td><td>平坦、无障碍、落点半径清晰可见</td></tr>
+</table>
+
+<h2>3. 空间流线（关卡块）</h2>
+
+<p>单关按「块」组装，首版不做无缝大地图。</p>
+
+<p>推荐块类型：</p>
+
+<p>1. <strong>入场区</strong>：安全落点 + 朝向锚点 + 轻引导（光/音/路）</p>
+<p>2. <strong>探索区</strong>：可环视、可走近互动物（道具/机关/对话触发）</p>
+<p>3. <strong>叙事节点</strong>：对话或过场触发区（可坐姿完成）</p>
+<p>4. <strong>解谜/轻战斗节点</strong>：边界清晰，失败可回落点</p>
+<p>5. <strong>出口/转场</strong>：明确去向下一块或下一关</p>
+
+<p>流线原则：一眼能懂下一步；死角要有回头路径；关键路径上避免强眩晕刺激。</p>
+
+<h2>4. 灯光与氛围（古剑气质 · 已锁定四层）</h2>
+
+<p>用户确认（2026-11-03）：场景制作范围 = 关卡概念 <strong>四层封闭关</strong>（高山→石桥→岩浆→洞府）。明细见 `docs/场景/四层空间流线与灯光制作清单.md` 与 `docs/关卡概念/四层明暗关系.md`。</p>
+
+<table>
+<tr><th>层</th><th>Key</th><th>Fill</th><th>Accent</th><th>色温节奏</th></tr>
+<tr><td>L1 高山</td><td>天窗冷光自上而下</td><td>弱环境青灰</td><td>洞口火把暖点</td><td>上亮下暗</td></tr>
+<tr><td>L2 石桥</td><td>高窗冷光斜切桥面</td><td>雾反射微亮</td><td>栏杆灯笼暖点</td><td>冷长光斑 + 暖引导</td></tr>
+<tr><td>L3 岩浆</td><td>**底光**岩浆上照</td><td>几乎无天空光</td><td>火盆高亮</td><td>下亮上暗，高饱和暖</td></tr>
+<tr><td>L4 洞府</td><td>祭坛暖顶光/灯火</td><td>柱侧弱反射</td><td>烛火局部</td><td>中心亮四角沉，中饱和暖</td></tr>
+</table>
+
+<p>通用：忌赛博霓虹；轻体积雾；过场可短压暗，避免连续闪切。Blockout 只用灰阶 + 光源色。</p>
+
+<h2>5. 资产与命名（Unity）</h2>
+
+<h3>5.1 目录（工程落地后）</h3>
+
+<pre><code>
+Assets/VRgame/
+  Scenes/
+  Environments/     # 模块化场景块 Prefab
+  Props/
+  Lighting/         # 灯光预设 / Sky / Volume
+  Materials/
+  Textures/
+  Colliders/
+</code></pre>
+
+<h3>5.2 命名</h3>
+
+<li>场景块：`ENV_&lt;关卡&gt;_&lt;块名&gt;`，如 `ENV_L01_Entrance`</li>
+<li>道具：`PROP_&lt;类别&gt;_&lt;名&gt;`</li>
+<li>灯光预设：`LIT_&lt;氛围名&gt;`</li>
+<li>材质：`M_&lt;表面&gt;_&lt;变体&gt;`</li>
+<li>避免中文文件名进工程；中文说明放 Markdown</li>
+
+<h3>5.3 模块化</h3>
+
+<li>块与块用统一对接边（门口/桥面/平台对齐）</li>
+<li>Prefab 自带碰撞与传送锚点空物体：`Anchor_Teleport`、`Anchor_Look`</li>
+<li>高模/装饰与碰撞网格分离，碰撞尽量用简单凸包/盒</li>
+
+<h2>6. 首版 Vertical Slice（场景侧验收草案）</h2>
+
+<p>戴上头显 3–5 分钟可走完：</p>
+
+<p>1. 传送入场 → 朝向正确</p>
+<p>2. 沿引导光/路走到叙事点（可触发占位对话）</p>
+<p>3. 完成 1 个轻互动（拾取或机关）</p>
+<p>4. 到达出口锚点</p>
+
+<p>场景侧交付物：1 个主场景 Scene + 1 套氛围灯光 + 模块 Prefab 清单 + 已知问题（穿模/晕动点）。</p>
+
+<h2>7. 与邻岗接口</h2>
+
+<table>
+<tr><th>邻岗</th><th>我提供</th><th>我需要</th></tr>
+<tr><td>策划</td><td>空间块列表、触发区占位</td><td>关卡节拍、任务点清单</td></tr>
+<tr><td>Unity程序</td><td>锚点命名、碰撞层约定</td><td>XR 传送/交互组件挂点</td></tr>
+<tr><td>UI美术</td><td>世界空间提示位（可选）</td><td>舒适度 UI 遮罩需求</td></tr>
+</table>
+
+<h2>8. 已拍板 / 仍待邻岗</h2>
+
+<table>
+<tr><th>项</th><th>状态</th></tr>
+<tr><td>场景范围</td><td>**已确认**：四层全做（高山/石桥/岩浆/洞府）</td></tr>
+<tr><td>灯光</td><td>**已锁定**：四套分层 LIT（见上表）</td></tr>
+<tr><td>气质/战斗比重</td><td>跟策划与关卡概念；场景按极少战斗的安全区与净宽预留</td></tr>
+</table>
+
+<hr/>
+<p>修订：2026-11-03 · VR场景制作（对齐四层关卡概念）</p>
+</body></html>

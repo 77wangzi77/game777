@@ -1,0 +1,105 @@
+{
+  "schema": "VRgame.Config.Prop",
+  "version": "v1-skeleton",
+  "_meta": {
+    "tableId": "prop",
+    "displayName": "物件表",
+    "layer": "frontend",
+    "frontendKeys": ["propId", "displayName", "prefab", "category", "interact", "lod", "levelTags"],
+    "backendKeys": ["propId", "interact.flags", "questFlagOnUse", "clueId"],
+    "sourceOfTruth": [
+      "docs/关卡概念/四关场景模型清单.md",
+      "docs/场景与资产规范.md",
+      "docs/策划/剧情关卡结构_VS.md"
+    ],
+    "idStyle": "PROP_* / ENV_*（环境块不进本表，仅 PROP）",
+    "fields": {
+      "propId": "主键 Prefab 名",
+      "displayName": "中文说明",
+      "category": "teleport|anchor|light|clue|interact|decor|barrier|fx",
+      "prefab": "Unity Prefab 路径草案",
+      "interact": "是否可交互及类型 examine|pickup|use|door",
+      "collision": "box|mesh|none",
+      "levelTags": "可用关卡 LV_* 或 L01..L04 / shared",
+      "priority": "P0|P1|P2",
+      "clueId": "剧情线索 ID（可选）"
+    }
+  },
+  "rows": [
+    {
+      "propId": "PROP_TeleportPad",
+      "displayName": "传送落点圆盘",
+      "category": "teleport",
+      "prefab": "Assets/VRgame/Props/PROP_TeleportPad.prefab",
+      "interact": {
+        "enabled": false,
+        "type": null
+      },
+      "collision": "box",
+      "levelTags": ["shared"],
+      "priority": "P0",
+      "clueId": null,
+      "notes": "四关共用；Anchor_Teleport 子节点"
+    },
+    {
+      "propId": "PROP_StoneLantern_A",
+      "displayName": "通用石灯",
+      "category": "light",
+      "prefab": "Assets/VRgame/Props/PROP_StoneLantern_A.prefab",
+      "interact": {
+        "enabled": false,
+        "type": null
+      },
+      "collision": "box",
+      "levelTags": ["shared", "LV_inn_night", "LV_L04_grotto"],
+      "priority": "P0",
+      "clueId": null
+    },
+    {
+      "propId": "PROP_L02_BambooSlips",
+      "displayName": "竹简捆（线索物）",
+      "category": "clue",
+      "prefab": "Assets/VRgame/Props/PROP_L02_BambooSlips.prefab",
+      "interact": {
+        "enabled": true,
+        "type": "examine"
+      },
+      "collision": "box",
+      "levelTags": ["LV_L02_bridge", "LV_inn_night"],
+      "priority": "P1",
+      "clueId": "CLUE_scroll_copy_a",
+      "questFlagOnUse": "found_copy_a",
+      "notes": "VS/石桥线索；文案互证"
+    },
+    {
+      "propId": "PROP_L03_ChainBridge",
+      "displayName": "链板吊桥",
+      "category": "interact",
+      "prefab": "Assets/VRgame/Props/PROP_L03_ChainBridge.prefab",
+      "interact": {
+        "enabled": true,
+        "type": "use"
+      },
+      "collision": "mesh",
+      "levelTags": ["LV_L03_magma"],
+      "priority": "P0",
+      "clueId": null,
+      "notes": "岩浆关通行；注意碰撞与晕动"
+    },
+    {
+      "propId": "PROP_L04_AltarTable",
+      "displayName": "祭坛桌",
+      "category": "interact",
+      "prefab": "Assets/VRgame/Props/PROP_L04_AltarTable.prefab",
+      "interact": {
+        "enabled": true,
+        "type": "examine"
+      },
+      "collision": "box",
+      "levelTags": ["LV_L04_grotto"],
+      "priority": "P0",
+      "clueId": "CLUE_altar_relief",
+      "notes": "洞府叙事中心"
+    }
+  ]
+}

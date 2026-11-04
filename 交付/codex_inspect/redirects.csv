@@ -1,0 +1,27 @@
+old_id,new_id,reason,updated
+N_host,DLG_01_host,对话节点与战斗 N_ 冲突；N_ 专留给杂兵,2026-11-03
+N_guest,DLG_01_guest,对话节点与战斗 N_ 冲突；N_ 专留给杂兵,2026-11-03
+N_mute,DLG_01_mute,对话节点与战斗 N_ 冲突；N_ 专留给杂兵,2026-11-03
+N_self,DLG_01_self,对话节点与战斗 N_ 冲突；N_ 专留给杂兵,2026-11-03
+LV_inn_night,LV_01_inn,关卡 id 统一章号前缀；LV_01_inn=叙事VS 非四层 LV_L01_Mountain·概念并存不 deprecate,2026-11-03
+Anchor_Teleport,AN_Teleport_L01_spawn,锚点统一 AN_Teleport_*（示例映射·出生）,2026-11-03
+Anchor_Look,AN_Look_L01_peak,锚点统一 AN_Look_*（示例映射）,2026-11-03
+Anchor_Save,AN_Save_L04_altar,锚点统一 AN_Save_*（示例映射）,2026-11-03
+N_shade,N_ghost,关卡概念鬼怪对齐怨影；战斗单位统一 N_ghost,2026-11-03
+SFX_blade_whoosh,SND_sword_whoosh,技能示例旧名,2026-11-03
+SFX_blade_hit,SND_sword_hit,技能示例旧名,2026-11-03
+VFX_blade_hit,VFX_hit_blade,技能示例旧名对齐分类,2026-11-03
+ENV_L01_Porch,ENV_Inn_Porch,驿站七块勿用四层 ENV_L01_*；统一 ENV_Inn_*,2026-11-03
+ENV_L01_Hall,ENV_Inn_Hall,驿站七块勿用四层 ENV_L01_*；统一 ENV_Inn_*,2026-11-03
+ENV_L01_Wing,ENV_Inn_Wing,驿站七块勿用四层 ENV_L01_*；统一 ENV_Inn_*,2026-11-03
+ENV_L01_Upper,ENV_Inn_Upper,驿站七块勿用四层 ENV_L01_*；统一 ENV_Inn_*,2026-11-03
+ENV_L01_Yard,ENV_Inn_Yard,驿站七块勿用四层 ENV_L01_*；统一 ENV_Inn_*,2026-11-03
+ENV_L01_Kitchen,ENV_Inn_Kitchen,驿站七块勿用四层 ENV_L01_*；统一 ENV_Inn_*,2026-11-03
+ENV_L01_Bamboo,ENV_Inn_Bamboo,驿站七块勿用四层 ENV_L01_*；统一 ENV_Inn_*,2026-11-03
+ENV_01_porch,ENV_Inn_Porch,场景日表旧蛇形 id→ENV_Inn_*,2026-11-03
+ENV_01_hall,ENV_Inn_Hall,场景日表旧蛇形 id→ENV_Inn_*,2026-11-03
+ENV_01_wing,ENV_Inn_Wing,场景日表旧蛇形 id→ENV_Inn_*,2026-11-03
+ENV_01_upper,ENV_Inn_Upper,场景日表旧蛇形 id→ENV_Inn_*,2026-11-03
+ENV_01_yard,ENV_Inn_Yard,场景日表旧蛇形 id→ENV_Inn_*,2026-11-03
+ENV_01_kitchen,ENV_Inn_Kitchen,场景日表旧蛇形 id→ENV_Inn_*,2026-11-03
+ENV_01_bamboo,ENV_Inn_Bamboo,场景日表旧蛇形 id→ENV_Inn_*,2026-11-03

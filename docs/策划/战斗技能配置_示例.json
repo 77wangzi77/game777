@@ -1,0 +1,324 @@
+{
+  "version": 1,
+  "skills": [
+    {
+      "skillId": "SK_slash",
+      "displayName": "斩击",
+      "skillType": "BasicAttack",
+      "shape": "meleeBox",
+      "lockType": "none",
+      "unbreakable": false,
+      "costs": {
+        "mp": 0,
+        "sp": 0,
+        "gp": 0
+      },
+      "cooldown": 0.0,
+      "chargeTime": 0.0,
+      "allowMoveWhileCast": true,
+      "moveRule": "sameAsNormal",
+      "animation": {
+        "cast": "ANIM_slash_1",
+        "charge": "",
+        "recover": ""
+      },
+      "vfx": {
+        "cast": "",
+        "projectile": "",
+        "hit": "VFX_blade_hit",
+        "deathOverride": ""
+      },
+      "sfx": {
+        "cast": "SFX_blade_whoosh",
+        "hit": "SFX_blade_hit"
+      },
+      "hitbox": {
+        "follow": "weaponBone",
+        "shape": "obb",
+        "size": {
+          "x": 0.2,
+          "y": 0.08,
+          "z": 1.1
+        },
+        "activeFrames": [
+          {
+            "start": 0.12,
+            "end": 0.2
+          }
+        ],
+        "multiHitSameTarget": false
+      },
+      "projectile": null,
+      "aoe": null,
+      "damage": {
+        "formulaId": "DMG_melee_light",
+        "multiplier": 1.0,
+        "element": "none",
+        "canCrit": true
+      },
+      "ui": {
+        "icon": "UI_icon_slash",
+        "showCD": false,
+        "binding": "BasicSkill"
+      },
+      "tags": [
+        "melee",
+        "basic"
+      ],
+      "notes": "基础武器盒斩击"
+    },
+    {
+      "skillId": "SK_tianhui_wuying",
+      "displayName": "天灰无影",
+      "skillType": "ChargeSkill",
+      "shape": "selfAoE",
+      "lockType": "none",
+      "unbreakable": false,
+      "costs": {
+        "mp": 30,
+        "sp": 0,
+        "gp": 100
+      },
+      "cooldown": 12.0,
+      "chargeTime": 3.0,
+      "allowMoveWhileCast": true,
+      "moveRule": "sameAsNormal",
+      "animation": {
+        "cast": "ANIM_ult_release",
+        "charge": "ANIM_ult_charge",
+        "recover": "ANIM_ult_recover"
+      },
+      "vfx": {
+        "cast": "VFX_tianhui_burst",
+        "projectile": "",
+        "hit": "VFX_tianhui_hit",
+        "deathOverride": ""
+      },
+      "sfx": {
+        "cast": "SFX_ult_slash",
+        "hit": "SFX_ult_impact"
+      },
+      "hitbox": null,
+      "projectile": null,
+      "aoe": {
+        "center": "self",
+        "shape": "circle",
+        "radius": 3.5,
+        "angle": 360,
+        "height": 2.0
+      },
+      "damage": {
+        "formulaId": "DMG_ult_slash",
+        "multiplier": 1.35,
+        "element": "shadow",
+        "canCrit": true
+      },
+      "ui": {
+        "icon": "UI_icon_tianhui",
+        "showCD": true,
+        "binding": "ChargeSkill"
+      },
+      "tags": [
+        "aoe",
+        "charge",
+        "ultimate"
+      ],
+      "notes": "蓄力3秒；GP+MP双条件示例"
+    },
+    {
+      "skillId": "SK_line_swordqi",
+      "displayName": "剑气直线",
+      "skillType": "ActiveSkill",
+      "shape": "line",
+      "lockType": "single",
+      "unbreakable": true,
+      "costs": {
+        "mp": 15,
+        "sp": 0,
+        "gp": 0
+      },
+      "cooldown": 5.0,
+      "chargeTime": 0.0,
+      "allowMoveWhileCast": true,
+      "moveRule": "sameAsNormal",
+      "animation": {
+        "cast": "ANIM_line_cast",
+        "charge": "",
+        "recover": ""
+      },
+      "vfx": {
+        "cast": "",
+        "projectile": "VFX_swordqi_line",
+        "hit": "VFX_swordqi_hit",
+        "deathOverride": ""
+      },
+      "sfx": {
+        "cast": "SFX_line_cast",
+        "hit": "SFX_line_hit"
+      },
+      "hitbox": null,
+      "projectile": {
+        "path": "line",
+        "speed": 18.0,
+        "length": 12.0,
+        "width": 0.6,
+        "pierce": true,
+        "maxTargets": 5,
+        "sinAmplitude": 0,
+        "sinWavelength": 0,
+        "parabolaHeight": 0,
+        "lifeTime": 1.2
+      },
+      "aoe": null,
+      "damage": {
+        "formulaId": "DMG_line",
+        "multiplier": 1.2,
+        "element": "none",
+        "canCrit": true
+      },
+      "ui": {
+        "icon": "UI_icon_line",
+        "showCD": true,
+        "binding": "Skill1"
+      },
+      "tags": [
+        "line",
+        "projectile",
+        "lock"
+      ],
+      "notes": "单体锁定；无抵消不可挡断"
+    },
+    {
+      "skillId": "SK_sin_wave",
+      "displayName": "涟波剑路",
+      "skillType": "ActiveSkill",
+      "shape": "sin",
+      "lockType": "none",
+      "unbreakable": false,
+      "costs": {
+        "mp": 18,
+        "sp": 5,
+        "gp": 0
+      },
+      "cooldown": 7.0,
+      "chargeTime": 0.0,
+      "allowMoveWhileCast": true,
+      "moveRule": "sameAsNormal",
+      "animation": {
+        "cast": "ANIM_sin_cast",
+        "charge": "",
+        "recover": ""
+      },
+      "vfx": {
+        "cast": "",
+        "projectile": "VFX_sin_wave",
+        "hit": "VFX_sin_hit",
+        "deathOverride": ""
+      },
+      "sfx": {
+        "cast": "SFX_sin_cast",
+        "hit": "SFX_sin_hit"
+      },
+      "hitbox": null,
+      "projectile": {
+        "path": "sin",
+        "speed": 12.0,
+        "length": 10.0,
+        "width": 0.8,
+        "pierce": true,
+        "maxTargets": 8,
+        "sinAmplitude": 1.2,
+        "sinWavelength": 3.0,
+        "parabolaHeight": 0,
+        "lifeTime": 1.5
+      },
+      "aoe": null,
+      "damage": {
+        "formulaId": "DMG_sin",
+        "multiplier": 1.0,
+        "element": "none",
+        "canCrit": true
+      },
+      "ui": {
+        "icon": "UI_icon_sin",
+        "showCD": true,
+        "binding": "Skill2"
+      },
+      "tags": [
+        "sin",
+        "projectile"
+      ],
+      "notes": "Sin轨迹伤害"
+    },
+    {
+      "skillId": "SK_parabola_fall",
+      "displayName": "月坠",
+      "skillType": "ActiveSkill",
+      "shape": "parabola",
+      "lockType": "single",
+      "unbreakable": true,
+      "costs": {
+        "mp": 22,
+        "sp": 0,
+        "gp": 0
+      },
+      "cooldown": 8.0,
+      "chargeTime": 0.0,
+      "allowMoveWhileCast": true,
+      "moveRule": "sameAsNormal",
+      "animation": {
+        "cast": "ANIM_parabola_cast",
+        "charge": "",
+        "recover": ""
+      },
+      "vfx": {
+        "cast": "",
+        "projectile": "VFX_moon_fall",
+        "hit": "VFX_moon_impact",
+        "deathOverride": ""
+      },
+      "sfx": {
+        "cast": "SFX_parabola_cast",
+        "hit": "SFX_parabola_hit"
+      },
+      "hitbox": null,
+      "projectile": {
+        "path": "parabola",
+        "speed": 0,
+        "length": 0,
+        "width": 0,
+        "pierce": false,
+        "maxTargets": 1,
+        "sinAmplitude": 0,
+        "sinWavelength": 0,
+        "parabolaHeight": 4.0,
+        "lifeTime": 1.0,
+        "impactRadius": 1.5
+      },
+      "aoe": {
+        "center": "impactPoint",
+        "shape": "circle",
+        "radius": 1.5,
+        "angle": 360,
+        "height": 2.0
+      },
+      "damage": {
+        "formulaId": "DMG_parabola",
+        "multiplier": 1.5,
+        "element": "none",
+        "canCrit": true
+      },
+      "ui": {
+        "icon": "UI_icon_parabola",
+        "showCD": true,
+        "binding": "Skill3"
+      },
+      "tags": [
+        "parabola",
+        "lock",
+        "aoe"
+      ],
+      "notes": "锁定后抛物线特效，落地范围伤害"
+    }
+  ]
+}

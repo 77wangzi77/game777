@@ -1,0 +1,42 @@
+AnimID,shot,t_start,t_end,frames_30,picture,clip,audio,vfx,player_ctrl,no_skip,note
+CS_01_intro,1,0.00,4.00,120,黑场→驿外石阶；玩家已在出生区,—（世界演出/淡入）,SND_amb_inn_night；风铃,VFX_env_inn_lamp,不可动·可微转头,否,VR淡入；坐姿OK
+CS_01_intro,2,4.00,10.00,180,远山剪影；一点尾火一闪即逝,—,九尾远啼（Amb/SFX）,VFX_cs_tailfire_far,不可动·可微转头,否,不露全兽
+CS_01_intro,3,10.00,18.00,240,剑穗/双月剑特写（玩家可不低头）,—,VO_narr_01_intro；BGM_cutscene_01_intro,—,不可动,是,★旁白：秦夜，简腥甜。我来斩妖。
+CS_01_intro,4,18.00,25.00,210,驿门灯亮；鼓点收；可走,—,鼓点收；BGM→BGM_inn_night,VFX_env_inn_lamp,还控制,否,Cutscene.Ended→Arrive/QM0
+SC_01_host,1,0.00,3.00,90,堂内；掌柜起身出示匣/伪简屑,掌柜 reach_box,VO_dlg_01_*；BGM_cutscene_bed,VFX_env_inn_lamp,可微转头/坐姿,否,首次见掌柜
+SC_01_host,2,3.00,9.00,180,伪简屑特写；掌柜讳言「猙」,掌柜 talk_guarded,VO 讳言短句,—,可微转头,是,★讳言句不可跳
+SC_01_host,3,9.00,15.00,180,匣收回；目光回避；对话续,掌柜 idle_nervous,BGM_inn_night 回探,—,还对话控制,否,Ended→对话续QM1
+SC_01_guest,1,0.00,3.00,90,旅客侧坐；窗纸微颤,旅客 lean_window,SND_amb_inn_night,—,可微转头,否,旅客深谈触发
+SC_01_guest,2,3.00,8.00,150,窗影掠过似九尾尾火,—,九尾啼极远,VFX_cs_tailfire_far,可微转头,否,只影不兽
+SC_01_guest,3,8.00,12.00,120,旅客压声：「夜里别看窗」,旅客 whisper,VO_dlg 短句,—,还对话,否,Ended→证据/深谈flag
+BI_01_yard,1,0.00,2.00,60,匣开；墙面投影一角色狰,ANIM_ghost_intro（影段）,SND_box_open；低吼,VFX_spawn_shadow_drop,锁移动·可格挡预备,否,伪匣/后院
+BI_01_yard,2,2.00,5.00,90,影碎；贼/化蛇附人从暗处扑,ANIM_ghost_move_lunge,破瓦；SND_ghost_whoosh,VFX_ghost_mist_trail,锁移动,否,刷怪点亮
+BI_01_yard,3,5.00,8.00,90,字幕「斬」弱提示；拔刀感,ANIM_ghost_alert→开战姿,拔刀；BGM→battle_trash,—,开战可伤,否,BossIntro/开战；Ended
+KO_01_zheng,1,0.00,1.20,36,狰影/蒙狰受致命；身形裂开,ANIM_ghost_death 起,SND_enemy_death_ash,VFX_death_ash_green,短锁,否,击杀触发
+KO_01_zheng,2,1.20,3.00,54,绿灰散尽；字幕「除魔·猙」,ANIM_ghost_death 收,VO_beast_name 短尾可选,VFX_death_ash_green,短锁→还控,否,Ended；可叠KO锣
+CS_01_expose,1,0.00,4.00,120,对质后；真简一角自匣出,掌柜/世界 prop_reveal,BGM_cutscene_bed,—,不可动·可微转头,否,揭穿成功
+CS_01_expose,2,4.00,10.00,180,简面兽名灼痕渐显,—,灼烧轻嘶,VFX_cs_brief_burn,不可动,是,★兽名首次可读
+CS_01_expose,3,10.00,16.00,180,旁白点题残简三声,—,VO_narr expose,—,不可动,是,★旁白
+CS_01_expose,4,16.00,20.00,120,简收入行囊位；灯稳,—,鼓点收,—,还控制,否,flag expose；Ended
+BI_01_host,1,0.00,3.00,90,拒共谋；桌椅翻飞,掌柜 slam_table,桌翻；BGM_boss_host intro,—,锁移动·可格挡预备,否,开战引入
+BI_01_host,2,3.00,7.00,120,掌柜借简驱影；影兵凝聚,ANIM_ghost_intro×N,低吼叠,VFX_spawn_shadow_drop,锁移动,否,刷影
+BI_01_host,3,7.00,10.00,90,掌柜战斗姿；可伤帧,掌柜 combat_ready,BGM loop,—,开战,否,BossIntro.Ended
+BI_01_elite,1,0.00,2.50,75,竹林口；披狰皮人影立定,蒙狰之徒 intro_stance,BGM_battle_elite 起,—,锁移动,否,追线精英
+BI_01_elite,2,2.50,5.50,90,狰皮张开；人面一闪,披皮 reveal,SND 皮裂,VFX_spawn_shadow_drop,锁移动·可格挡预备,否,点名蒙狰
+BI_01_elite,3,5.50,8.00,75,拔刃扑势；字幕弱「斬」,lunge_ready,拔刀,—,开战,否,Ended→可伤
+CS_01_outro,1,0.00,5.00,150,竹林口夜色；驿灯远退,—,BGM_cutscene_bed,VFX_env_L02_mist 薄,不可动·可微转头,否,任务胜利
+CS_01_outro,2,5.00,12.00,210,竹影蠕动；化蛇气息一线,—,化蛇低息 Amb,竹影暗示VFX可空,不可动,否,钩章2；不露全Boss
+CS_01_outro,3,12.00,17.00,150,旁白收束残简,—,VO_narr outro,—,不可动,是,★旁白
+CS_01_outro,4,17.00,20.00,90,黑场前最后灯火；接ST或Save,—,鼓点收,—,交Outro/ST,否,Ended→Level.Outro
+ST_win,1,0.00,3.00,90,简获一角特写；灰雾散,—,BGM_stinger_win,VFX_cs_brief_burn 弱,UI可点,否,胜结算
+ST_win,2,3.00,7.00,120,结算UI淡入；flag展示,—,stinger 延续,—,UI可点,否,可跳过剩余
+ST_win,3,7.00,10.00,90,按钮：继续/存档,—,—,—,UI可点,否,Ended→Save
+ST_lose,1,0.00,3.00,90,简火起；影吞灯,—,BGM_stinger_lose,简火弱光（禁全屏闪）,UI可点,否,败结算
+ST_lose,2,3.00,7.00,120,结算UI；重试/退出,—,弦断尾,—,UI可点,否,
+ST_lose,3,7.00,10.00,90,确认退出或重试,—,—,—,UI可点,否,Ended
+BI_minotaur_gate,1,0.00,2.50,75,石桥门；蹄踏石屑扬,ANIM_mino_intro 起,SND 蹄踏；BGM_boss_minotaur,VFX_spawn_mino_stomp,锁移动·可格挡预备,否,ENC_minotaur_gate
+BI_minotaur_gate,2,2.50,5.50,90,牛首抬头；斧拄地火花,ANIM_mino_alert,鼻息；SND_mino_axe 轻,VFX_mino_charge_tele 预闪可无,锁移动,否,可读体型
+BI_minotaur_gate,3,5.50,8.00,75,斧抬；可伤帧；侧向逃点亮,ANIM_mino_idle 战姿,BGM loop,—,开战,否,BossIntro→P1
+BI_serpent,1,0.00,3.00,90,石缝/岩浆缝盘出蛇躯,ANIM_serpent_intro 出缝,BGM_boss_serpent intro,VFX_spawn_serpent_rise,锁移动·可坐姿看,否,ENC_serpent_boss；id=BI_serpent（非另名BI_serpent_intro）
+BI_serpent,2,3.00,7.00,120,昂首；红鬣炸开一瞬,ANIM_serpent_alert_rise,SND_serpent_bite 远预,VFX_serpent_scale_shimmer,锁移动,否,预警示范
+BI_serpent,3,7.00,10.00,90,盘台定；逃点标亮；可伤,ANIM_serpent_idle_coil,BGM loop,—,开战P1,否,Intro不可伤→Ended可伤

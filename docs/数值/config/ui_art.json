@@ -1,0 +1,100 @@
+{
+  "schema": "VRgame.Config.UIArt",
+  "version": "v1-skeleton",
+  "_meta": {
+    "tableId": "ui_art",
+    "displayName": "UI美术表",
+    "layer": "frontend",
+    "frontendKeys": ["uiId", "displayName", "resourceKey", "prefabPath", "anchor", "comfortTier", "palette", "priority"],
+    "backendKeys": [],
+    "sourceOfTruth": [
+      "docs/UI界面清单_首版.md",
+      "docs/UI舒适度规范.md",
+      "docs/UI资产分类.md"
+    ],
+    "idStyle": "UI-01.. / UI_* resource keys",
+    "fields": {
+      "uiId": "界面 ID，对齐清单 UI-01",
+      "displayName": "界面名",
+      "resourceKey": "资源键（贴图/Prefab 逻辑名）",
+      "prefabPath": "Unity 相对路径草案",
+      "anchor": "world|head|wrist|screen",
+      "comfortTier": "A沉浸提示|B对话选项|C系统菜单|D_HUD",
+      "distanceM": "推荐交互距离米",
+      "priority": "P0|P1|P2",
+      "localeKeys": "文案键列表"
+    }
+  },
+  "rows": [
+    {
+      "uiId": "UI-01",
+      "displayName": "启动/主菜单",
+      "resourceKey": "UI_MainMenu",
+      "prefabPath": "Assets/VRgame/UI/Prefabs/UI_MainMenu.prefab",
+      "anchor": "world",
+      "comfortTier": "C",
+      "distanceM": 1.5,
+      "priority": "P0",
+      "palette": "ink_cyan_gold",
+      "localeKeys": ["ui.main.start", "ui.main.continue", "ui.main.settings", "ui.main.quit"],
+      "notes": "坐姿可读；角花轻装饰"
+    },
+    {
+      "uiId": "UI-02",
+      "displayName": "对话框",
+      "resourceKey": "UI_DialogBox",
+      "prefabPath": "Assets/VRgame/UI/Prefabs/UI_DialogBox.prefab",
+      "anchor": "world",
+      "comfortTier": "B",
+      "distanceM": 1.4,
+      "priority": "P0",
+      "palette": "paper_moonwhite",
+      "localeKeys": ["ui.dialog.name", "ui.dialog.body", "ui.dialog.continue"],
+      "notes": "角色名+正文+继续；世界锚"
+    },
+    {
+      "uiId": "UI-03",
+      "displayName": "分支选项",
+      "resourceKey": "UI_BranchOptions",
+      "prefabPath": "Assets/VRgame/UI/Prefabs/UI_BranchOptions.prefab",
+      "anchor": "world",
+      "comfortTier": "B",
+      "distanceM": 1.4,
+      "priority": "P0",
+      "palette": "gold_hover_crimson_emphasis",
+      "localeKeys": ["ui.branch.opt1", "ui.branch.opt2", "ui.branch.opt3"],
+      "notes": "2–3 项；射线可选；热区≥视觉"
+    },
+    {
+      "uiId": "UI-04",
+      "displayName": "交互提示",
+      "resourceKey": "UI_InteractHint",
+      "prefabPath": "Assets/VRgame/UI/Prefabs/UI_InteractHint.prefab",
+      "anchor": "head",
+      "comfortTier": "A",
+      "distanceM": 1.2,
+      "priority": "P0",
+      "palette": "soft_gold",
+      "localeKeys": ["ui.hint.interact"],
+      "notes": "短提示；跟头短时；淡入≤0.3s"
+    },
+    {
+      "uiId": "UI-05",
+      "displayName": "暂停/设置",
+      "resourceKey": "UI_PauseSettings",
+      "prefabPath": "Assets/VRgame/UI/Prefabs/UI_PauseSettings.prefab",
+      "anchor": "world",
+      "comfortTier": "C",
+      "distanceM": 1.6,
+      "priority": "P0",
+      "palette": "ink_cyan_gold",
+      "localeKeys": [
+        "ui.settings.comfort",
+        "ui.settings.move_mode",
+        "ui.settings.ui_scale",
+        "ui.settings.seated"
+      ],
+      "notes": "含舒适度：传送/滑步、渐晕、字号、坐姿高度"
+    }
+  ]
+}
