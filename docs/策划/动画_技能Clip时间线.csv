@@ -1,0 +1,17 @@
+skillId,clip_seq,t_windup,t_active,t_recovery,hit_frames,total_s,notes
+SK_ghost_claw,ANIM_ghost_atk_claw,0.25,0.12,0.35,7-10,0.72,hit起@t=0.25；meleeBox；可格挡
+SK_ghost_claw2,ANIM_ghost_atk_claw2,0.20,0.20,0.40,6;9,0.80,两段active各0.10；hit@t=0.20与0.30；段间可格挡
+SK_ghost_pounce,ANIM_ghost_move_lunge→ANIM_ghost_atk_pounce,0.35,0.15,0.50,10-14,1.00,ShadowStretch峰t=0.25；hit起@t=0.35；建议不可格挡侧闪
+SK_ghost_armor_claw,ANIM_ghost_armor_claw,0.30,0.12,0.40,9-12,0.82,甲片反光预警
+SK_ghost_armor_pounce,ANIM_ghost_armor_pounce,0.40,0.18,0.55,12-17,1.13,影拉长更久；落空破绽0.60
+SK_ghost_armor_pulse,ANIM_ghost_armor_pulse,0.30,0.10,0.45,9-12,0.85,selfAoE r≈1.5m；甲缘金光
+SK_mino_axe_h,ANIM_mino_atk_axe_h,0.40,0.15,0.50,12-16,1.05,肩沉斧贴地预摆
+SK_mino_axe_v,ANIM_mino_atk_axe_v,0.45,0.12,0.55,13-16,1.12,举斧遮顶；砸地破绽0.55
+SK_mino_charge,ANIM_mino_charge_windup→ANIM_mino_charge_loop→ANIM_mino_charge_end,0.45,0.60,0.40,loop全程,1.45,抬腿0.45≥0.40；冲0.60；收0.40；撞停破绽0.70；需侧向逃点
+SK_mino_chain,ANIM_mino_atk_chain,0.35,0.50,0.30,10起弹道,1.15,sin/line；出手后破绽0.30
+SK_serpent_bite,ANIM_serpent_atk_bite,0.40,0.15,0.45,12-16,1.00,红鬣炸开瞳亮
+SK_serpent_tail,ANIM_serpent_atk_tail,0.40,0.20,0.50,12-17,1.10,尾颤预警0.40≥0.35；逃点
+SK_serpent_coil,ANIM_serpent_atk_coil_crush,0.50,0.30,0.60,15-23,1.40,圈外逃；散开破绽0.60
+SK_serpent_spit,ANIM_serpent_atk_spit,0.35,0.60,0.40,落地帧,1.35,parabola；锁定落点；弹道时间计入active
+SK_serpent_wave,ANIM_serpent_atk_wave,0.40,0.80,0.35,轨迹采样,1.55,sin躯波；波尽破绽0.35
+SK_slash,ANIM_slash_1|ANIM_slash_2|ANIM_slash_3,0.12,0.10,0.33,见各clip,0.55/0.55/0.70,玩家基础斩；连段切换；P0占位

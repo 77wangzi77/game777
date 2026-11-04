@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "meta": {
+    "project": "VRgame",
+    "audience": "数值策划",
+    "engine": "Unity",
+    "notes": "与战斗系统/技能配置/角色剑客/关卡设计对齐"
+  },
+  "playerBaseByLevel": [
+    {
+      "level": 1,
+      "hp": 100,
+      "mp": 50,
+      "sp": 80,
+      "atk": 12,
+      "matk": 8,
+      "def": 5,
+      "mdef": 4,
+      "crit": 0.05,
+      "critDmg": 1.5
+    },
+    {
+      "level": 2,
+      "hp": 115,
+      "mp": 58,
+      "sp": 85,
+      "atk": 14,
+      "matk": 9,
+      "def": 6,
+      "mdef": 5,
+      "crit": 0.05,
+      "critDmg": 1.5
+    },
+    {
+      "level": 3,
+      "hp": 130,
+      "mp": 66,
+      "sp": 90,
+      "atk": 16,
+      "matk": 11,
+      "def": 7,
+      "mdef": 5,
+      "crit": 0.06,
+      "critDmg": 1.5
+    },
+    {
+      "level": 4,
+      "hp": 148,
+      "mp": 75,
+      "sp": 95,
+      "atk": 18,
+      "matk": 12,
+      "def": 8,
+      "mdef": 6,
+      "crit": 0.06,
+      "critDmg": 1.55
+    },
+    {
+      "level": 5,
+      "hp": 168,
+      "mp": 85,
+      "sp": 100,
+      "atk": 21,
+      "matk": 14,
+      "def": 9,
+      "mdef": 7,
+      "crit": 0.07,
+      "critDmg": 1.55
+    }
+  ],
+  "weaponBase": [
+    {
+      "weaponId": "WPN_shuangyue_wuhen",
+      "atk": 14,
+      "matk": 0,
+      "speedTier": "mid",
+      "gpOnHit": 10
+    }
+  ],
+  "damageFormulas": [
+    {
+      "formulaId": "DMG_melee_light",
+      "expr": "(atk + weaponAtk) * skillMul * (1 - def/(def+K_def))",
+      "K_def": 50
+    },
+    {
+      "formulaId": "DMG_line",
+      "expr": "(atk*0.6 + matk*0.6 + weaponAtk) * skillMul * (1 - mdef/(mdef+K_mdef))",
+      "K_mdef": 50
+    },
+    {
+      "formulaId": "DMG_sin",
+      "expr": "(atk*0.5 + matk*0.7) * skillMul * (1 - mdef/(mdef+K_mdef))",
+      "K_mdef": 50
+    },
+    {
+      "formulaId": "DMG_parabola",
+      "expr": "(atk*0.4 + matk*0.9) * skillMul * (1 - mdef/(mdef+K_mdef))",
+      "K_mdef": 50
+    },
+    {
+      "formulaId": "DMG_ult_slash",
+      "expr": "(atk + weaponAtk) * skillMul * chargeScale * (1 - def/(def+K_def))",
+      "K_def": 50
+    }
+  ],
+  "skillNumeric": [
+    {
+      "skillId": "SK_slash",
+      "mp": 0,
+      "sp": 0,
+      "gp": 0,
+      "cd": 0,
+      "chargeTime": 0,
+      "mul": [
+        1.0,
+        1.1,
+        1.35
+      ],
+      "formulaId": "DMG_melee_light"
+    },
+    {
+      "skillId": "SK_tianhui_wuying",
+      "mp": 30,
+      "sp": 0,
+      "gp": 100,
+      "cd": 12,
+      "chargeTime": 3,
+      "mul": 1.35,
+      "formulaId": "DMG_ult_slash",
+      "aoeRadius": 3.5
+    },
+    {
+      "skillId": "SK_line_swordqi",
+      "mp": 15,
+      "sp": 0,
+      "gp": 0,
+      "cd": 5,
+      "chargeTime": 0,
+      "mul": 1.2,
+      "formulaId": "DMG_line"
+    },
+    {
+      "skillId": "SK_sin_wave",
+      "mp": 18,
+      "sp": 5,
+      "gp": 0,
+      "cd": 7,
+      "chargeTime": 0,
+      "mul": 1.0,
+      "formulaId": "DMG_sin"
+    },
+    {
+      "skillId": "SK_parabola_fall",
+      "mp": 22,
+      "sp": 0,
+      "gp": 0,
+      "cd": 8,
+      "chargeTime": 0,
+      "mul": 1.5,
+      "formulaId": "DMG_parabola",
+      "impactRadius": 1.5
+    }
+  ],
+  "gpRules": {
+    "max": 100,
+    "onHitMin": 8,
+    "onHitMax": 12,
+    "perfectBlock": 15,
+    "breakPenalty": 30,
+    "chargeMinSec": 0.6,
+    "chargeMaxSec": 3.0,
+    "chargeDmgScaleMin": 1.0,
+    "chargeDmgScaleMax": 1.35
+  },
+  "spRules": {
+    "maxBase": 80,
+    "runCostPerSec": 8,
+    "rollCost": 20,
+    "regenPerSecIdle": 12,
+    "walkOnlyWhenZero": true
+  },
+  "mpRules": {
+    "regenCombatPerSec": 0,
+    "regenOutOfCombatPerSec": 5,
+    "blockSkillsWhenInsufficient": true
+  },
+  "enemyBudget": [
+    {
+      "id": "N_bandit",
+      "level": 1,
+      "hp": 40,
+      "atk": 10,
+      "def": 2,
+      "ttkSec": "3-5",
+      "role": "trash"
+    },
+    {
+      "id": "N_bandit_r",
+      "level": 1,
+      "hp": 30,
+      "atk": 10,
+      "def": 0,
+      "ttkSec": "2-4",
+      "role": "trash"
+    },
+    {
+      "id": "N_cult_s",
+      "level": 2,
+      "hp": 45,
+      "atk": 8,
+      "matk": 10,
+      "def": 2,
+      "ttkSec": "4-6",
+      "role": "trash"
+    },
+    {
+      "id": "E_double",
+      "level": 3,
+      "hp": 120,
+      "atk": 14,
+      "def": 5,
+      "ttkSec": "20-35",
+      "role": "elite"
+    },
+    {
+      "id": "B_host",
+      "level": 3,
+      "hp": 180,
+      "atk": 16,
+      "def": 6,
+      "ttkSec": "45-75",
+      "role": "boss"
+    },
+    {
+      "id": "B_bamboo",
+      "level": 5,
+      "hp": 280,
+      "atk": 20,
+      "def": 8,
+      "ttkSec": "90-150",
+      "role": "boss"
+    },
+    {
+      "id": "B_shrine",
+      "level": 7,
+      "hp": 360,
+      "atk": 24,
+      "def": 10,
+      "ttkSec": "120-180",
+      "role": "boss"
+    },
+    {
+      "id": "B_mirror",
+      "level": 9,
+      "hp": 420,
+      "atk": 28,
+      "def": 12,
+      "ttkSec": "150-210",
+      "role": "boss"
+    }
+  ],
+  "levelEconomy": [
+    {
+      "levelId": "LV_example",
+      "timeLimitSec": 900,
+      "winRewardSilver": 50,
+      "loseRewardSilver": 0,
+      "respawnCount": 3
+    }
+  ],
+  "balanceTargets": {
+    "trashTTK": "3-6s",
+    "eliteTTK": "20-40s",
+    "bossTTK": "1.5-3.5min",
+    "playerDeathFromTrashCombo": "not within 2 hits at equal level",
+    "mpPool": "4-6 actives before empty without regen",
+    "spPool": "2-3 rolls + short run before walk-only"
+  }
+}

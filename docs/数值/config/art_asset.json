@@ -1,0 +1,55 @@
+{
+  "schema": "VRgame.ArtAsset",
+  "version": "v1",
+  "_meta": {
+    "ownerDefault": "美术",
+    "statusDefault": "draft"
+  },
+  "rows": [
+    {
+      "id": "TEX_inn_wood_01",
+      "type": "tex",
+      "cn_name": "驿站木纹",
+      "owner": "美术",
+      "status": "draft",
+      "path": "Art/Tex/inn_wood_01",
+      "note": ""
+    },
+    {
+      "id": "M_inn_plaster",
+      "type": "mat",
+      "cn_name": "驿站墙灰",
+      "owner": "美术",
+      "status": "draft",
+      "path": "Art/Mat/inn_plaster",
+      "note": ""
+    },
+    {
+      "id": "UI_ICO_quest",
+      "type": "ico",
+      "cn_name": "任务短标图标",
+      "owner": "UI",
+      "status": "draft",
+      "path": "UI/Ico/quest",
+      "note": "ICO_"
+    },
+    {
+      "id": "UI_IMG_dialog_frame",
+      "type": "img",
+      "cn_name": "对话框框体",
+      "owner": "UI",
+      "status": "draft",
+      "path": "UI/Img/dialog_frame",
+      "note": "IMG_"
+    },
+    {
+      "id": "PROP_bell_mesh",
+      "type": "mesh",
+      "cn_name": "风铃灰模",
+      "owner": "美术",
+      "status": "draft",
+      "path": "Art/Mesh/bell",
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "schema": "VRgame.Config.Character",
+  "version": "v1-skeleton",
+  "_meta": {
+    "tableId": "character",
+    "displayName": "角色表",
+    "layer": "frontend+backend",
+    "frontendKeys": ["displayName", "archetype", "defaultWeaponId", "skillLoadout", "animationIds", "uiPortraitKey"],
+    "backendKeys": ["characterId", "baseLevelRef", "statGrowthRef", "resourceCaps"],
+    "sourceOfTruth": [
+      "docs/策划/角色系统_剑客.md",
+      "docs/数值/数值配置_前端_v1.json#playerBaseByLevel"
+    ],
+    "idStyle": "CHAR_* / WPN_* / ACT_*",
+    "fields": {
+      "characterId": "主键，如 CHAR_swordsman",
+      "displayName": "显示名",
+      "role": "player|npc|enemyRef",
+      "archetype": "定位标签",
+      "defaultWeaponId": "关联 WPN_*",
+      "skillLoadout": "默认技能 ID 列表",
+      "baseLevelRef": "引用 combat_numeric.playerBaseByLevel 起始等级",
+      "resourceCaps": "hp/mp/sp/gp/dp 上限规则引用或覆写",
+      "tags": "筛选标签"
+    }
+  },
+  "rows": [
+    {
+      "characterId": "CHAR_swordsman",
+      "displayName": "剑客",
+      "role": "player",
+      "archetype": "melee_burst_charge",
+      "defaultWeaponId": "WPN_shuangyue_wuhen",
+      "skillLoadout": [
+        "SK_slash",
+        "SK_tianhui_wuying",
+        "SK_line_swordqi",
+        "SK_sin_wave",
+        "SK_parabola_fall"
+      ],
+      "baseLevelRef": 1,
+      "resourceCaps": {
+        "gpMax": 100,
+        "dpMax": 100,
+        "spFromTable": true
+      },
+      "actSets": ["ACT_base_1_explore", "ACT_base_2_combat"],
+      "uiPortraitKey": "UI_portrait_swordsman",
+      "tags": ["player", "swordsman", "vs_default"],
+      "notes": "双月无痕 · 天灰无影；对齐角色系统_剑客.md"
+    },
+    {
+      "characterId": "CHAR_host",
+      "displayName": "掌柜",
+      "role": "npc",
+      "archetype": "narrative_questgiver",
+      "defaultWeaponId": null,
+      "skillLoadout": [],
+      "enemyRefId": "B_host",
+      "baseLevelRef": null,
+      "uiPortraitKey": "UI_portrait_host",
+      "tags": ["npc", "chapter1", "LV_inn_night"],
+      "notes": "VS 假案主述；可转 Boss 对峙时读 enemyBudget.B_host"
+    },
+    {
+      "characterId": "CHAR_guest",
+      "displayName": "旅客",
+      "role": "npc",
+      "archetype": "narrative_witness",
+      "defaultWeaponId": null,
+      "skillLoadout": [],
+      "enemyRefId": null,
+      "uiPortraitKey": "UI_portrait_guest",
+      "tags": ["npc", "chapter1", "LV_inn_night"],
+      "notes": "闲话藏真时间线"
+    },
+    {
+      "characterId": "CHAR_mute_servant",
+      "displayName": "哑仆",
+      "role": "npc",
+      "archetype": "narrative_secret",
+      "defaultWeaponId": null,
+      "skillLoadout": [],
+      "enemyRefId": null,
+      "uiPortraitKey": "UI_portrait_mute",
+      "tags": ["npc", "chapter1", "darkline"],
+      "notes": "灶房柴间暗线"
+    },
+    {
+      "characterId": "CHAR_bandit",
+      "displayName": "山贼杂兵",
+      "role": "enemyRef",
+      "archetype": "trash_melee",
+      "defaultWeaponId": null,
+      "skillLoadout": [],
+      "enemyRefId": "N_bandit",
+      "baseLevelRef": 1,
+      "uiPortraitKey": null,
+      "tags": ["enemy", "trash"],
+      "notes": "战斗数值见 combat_numeric.enemyBudget"
+    }
+  ]
+}

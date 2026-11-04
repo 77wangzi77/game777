@@ -1,0 +1,117 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><title>场景日表</title><style>body{font-family:sans-serif;max-width:900px;margin:24px auto;line-height:1.45;font-size:14px}table{border-collapse:collapse;width:100%;margin:8px 0}td{border:1px solid #ccc;padding:4px 6px;vertical-align:top}h1{font-size:1.4rem}h2{font-size:1.15rem;margin-top:1.2em}</style></head><body><h1>一周试玩 · 场景岗具体事件日表</h1>
+<p>&gt; 范围：驿站 VS《残简三声》七区灰模 · Blender → FBX → Unity  </p>
+<p>&gt; 不做：精模、四层关、完整战斗场景  </p>
+<p>&gt; 资源：id 进 `docs/资源/资源总表.csv`（draft）；命名按 `命名规范.md`  </p>
+<p>&gt; 修订：2026-11-03 · VR场景制作</p>
+<h2>关卡块（七区，终局不变）</h2>
+<table>
+<tr><td>id</td><td>中文</td><td>用途</td></tr>
+<tr><td>`ENV_01_porch`</td><td>外廊</td><td>入关、风铃、更鼓可闻</td></tr>
+<tr><td>`ENV_01_hall`</td><td>堂内</td><td>掌柜/旅客对话双锚</td></tr>
+<tr><td>`ENV_01_wing`</td><td>客房侧廊</td><td>线索半遮挡</td></tr>
+<tr><td>`ENV_01_upper`</td><td>上房</td><td>可锁→残页</td></tr>
+<tr><td>`ENV_01_yard`</td><td>后院</td><td>伪匣解谜</td></tr>
+<tr><td>`ENV_01_kitchen`</td><td>灶房柴间</td><td>哑仆/字条</td></tr>
+<tr><td>`ENV_01_bamboo`</td><td>竹林口</td><td>离关过场边界</td></tr>
+</table>
+<p>（若总表已用 `ENV_L01_*` 驼峰，以总表为准并写 redirects；本表以蛇形对齐命名规范。）</p>
+<h2>锚点约定</h2>
+<table>
+<tr><td>类型</td><td>命名例</td><td>谁用</td></tr>
+<tr><td>传送落点</td><td>`AN_Teleport_01_porch_spawn`</td><td>程序 XRI</td></tr>
+<tr><td>朝向</td><td>`AN_Look_01_hall_door`</td><td>入区朝向</td></tr>
+<tr><td>UI 世界锚</td><td>`AN_Look_UI_dialogue` / `AN_Look_UI_menu`</td><td>UI 美术</td></tr>
+<tr><td>触发占位空物体</td><td>`AN_Trigger_QE3` 等</td><td>策划 D5 清单对齐后改名锁定</td></tr>
+</table>
+<hr/>
+<h2>D1（日1）· 开建外廊+堂</h2>
+<p><strong>事件 / 产出</strong></p>
+<p>1. 新建 Blender 工程：`VRgame_blender/blockout/LV_01_inn_Blockout.blend`（与四层文件分开）</p>
+<p>2. 建 Collection：`ENV_01_porch` / `ENV_01_hall` / `Anchors` / `Colliders`</p>
+<p>3. 灰盒：外廊石阶+窄廊+堂门洞；堂内地面+双侧 NPC 站位台（无角色模）</p>
+<p>4. 埋点：`AN_Teleport_01_porch_spawn`、`AN_Look_01_hall_door`、`AN_Teleport_01_hall_center`</p>
+<p>5. 总表追加上述 ENV/AN 行，owner=场景，status=draft</p>
+<p><strong>验收</strong>：Blender 里从 spawn 视线能看进堂门；单位 1m；通道净宽≥1.2m  </p>
+<p><strong>依赖</strong>：无  </p>
+<p><strong>交谁</strong>：自检；路径告知程序</p>
+<hr/>
+<h2>D2（日2）· 七区壳 + UI 锚</h2>
+<p><strong>事件 / 产出</strong></p>
+<p>1. 补齐 `wing` / `upper` / `yard` / `kitchen` / `bamboo` 灰盒外壳与门洞连通</p>
+<p>2. 每区 ≥1 个 `AN_Teleport_*`；关键朝向 `AN_Look_*`</p>
+<p>3. 埋 UI 锚：`AN_Look_UI_dialogue`（堂内主对话位）、`AN_Look_UI_menu`（外廊或暂停安全位）、`AN_Look_UI_choice`（抉择位，堂/外廊）</p>
+<p>4. 上房门：锁态可见盒子（`PROP_01_upper_lock` 占位）</p>
+<p><strong>验收</strong>：七 Collection 齐；传送空物体命名可读；UI 三锚坐标写下表（世界坐标一页）  </p>
+<p><strong>依赖</strong>：UI 确认锚大致朝向；不阻塞可先按堂内眼平 1.5m  </p>
+<p><strong>交谁</strong>：@UI 美术坐标；@程序 预留挂点</p>
+<hr/>
+<h2>D3（日3）· 碰撞 + FBX 首包</h2>
+<p><strong>事件 / 产出</strong></p>
+<p>1. 每区 `PROP_ColliderProxy` 盒：可走地面、护栏、不可坠虚空</p>
+<p>2. 门洞净空检查（碰头高≥2.0m）</p>
+<p>3. 导出 FBX：`VRgame_blender/export/LV_01_inn_blockout_D3.fbx`（Scale 1，含空物体）</p>
+<p>4. 导出说明 md：轴向、单位、AN 列表</p>
+<p><strong>验收</strong>：程序能导入；踩传送点名与空物体一致；无必备精模  </p>
+<p><strong>依赖</strong>：程序工程可进资产（或先放 `blender/export` 等仓）  </p>
+<p><strong>交谁</strong>：@Unity程序</p>
+<hr/>
+<h2>D4（日4）· 灯光包 + 落点抛光</h2>
+<p><strong>事件 / 产出</strong></p>
+<p>1. 灯光预设（Blender 参考灯 + 说明给 Unity Volume）：  </p>
+<p>   - `LIT_01_porch_cold` 廊外冷月  </p>
+<p>   - `LIT_01_hall_warm` 堂内暖烛  </p>
+<p>   - 后院偏冷、灶房偏暖短注</p>
+<p>2. 传送落点加可见圆盘灰模 `PROP_TeleportPad`（复用）</p>
+<p>3. 修 D3 反馈的穿模/卡缝</p>
+<p><strong>验收</strong>：廊/堂色温可区分；落点半径在头显/模拟器里可读  </p>
+<p><strong>依赖</strong>：程序已挂基础 XR 传送更佳；否则先自测视角  </p>
+<p><strong>交谁</strong>：@程序</p>
+<hr/>
+<h2>D5（日5）· 线索/风铃/灶房占位</h2>
+<p><strong>事件 / 产出</strong></p>
+<p>1. PROP 灰盒占位（眼平 0.9–1.4m）：  </p>
+<p>   - `PROP_01_wind_chime`（外廊）  </p>
+<p>   - `PROP_01_clue_scrap`（上房残页）  </p>
+<p>   - `PROP_01_box_fake`（后院匣）  </p>
+<p>   - `PROP_01_note_kitchen`（灶房字条）  </p>
+<p>   - 红鲱鱼/伪物各 1：`PROP_01_clue_redherring`</p>
+<p>2. 竹林口：边界壳 + `AN_Teleport_01_bamboo_exit`（离关）</p>
+<p>3. 按策划 D5「触发区清单」把 `AN_Trigger_*` 空物体对齐改名（若清单迟到：先占位名+对照表）</p>
+<p><strong>验收</strong>：expose 路径空间上必须离开堂→后院或上房→灶房 可走通  </p>
+<p><strong>依赖</strong>：策划触发区清单（D5）；没有则用概念说明 §5 默认位  </p>
+<p><strong>交谁</strong>：@策划 @程序；更新总表 draft</p>
+<hr/>
+<h2>D6（日6）· 触发对齐 + expose 复跑</h2>
+<p><strong>事件 / 产出</strong></p>
+<p>1. 与策划触发区清单一一对表，改名/补漏写 changelog 一行</p>
+<p>2. 导出 FBX `..._D6.fbx` + AN 全表 CSV（id,x,y,z,parent_env）</p>
+<p>3. 自测流线：porch→hall→wing/upper/yard/kitchen→bamboo 无卡死</p>
+<p><strong>验收</strong>：程序 EventBus 所需 Arrive 点均有对应 AN；UI 锚仍在  </p>
+<p><strong>依赖</strong>：程序 Arrive 事件名；策划清单  </p>
+<p><strong>交谁</strong>：@程序 @UI</p>
+<hr/>
+<h2>D7（日7）· 走查收口</h2>
+<p><strong>事件 / 产出</strong></p>
+<p>1. 头显或 Device Simulator 走查：穿模、落点悬空、门洞卡住、灯光过曝</p>
+<p>2. 修 P0 卡点；P1 记入 `docs/场景/试玩已知问题.md`</p>
+<p>3. 终包：`LV_01_inn_blockout_playtest.fbx` + blend + 问题清单</p>
+<p><strong>验收</strong>：传送+七区可走完；不挡 QM0→QM5 灰模主线  </p>
+<p><strong>不做</strong>：精模、四层关、战斗场布景  </p>
+<p><strong>交谁</strong>：群内贴路径；@程序打进试玩包</p>
+<hr/>
+<h2>与邻岗接口（事件名）</h2>
+<table>
+<tr><td>场景交付</td><td>程序预期</td><td>UI 预期</td></tr>
+<tr><td>`AN_Teleport_*`</td><td>XRI Teleport Anchor</td><td>—</td></tr>
+<tr><td>`AN_Look_UI_*`</td><td>可选朝向</td><td>World Space Canvas</td></tr>
+<tr><td>`AN_Trigger_*` / PROP 线索</td><td>`Arrive` / `Item.Inspected`</td><td>检视提示 ICON</td></tr>
+<tr><td>竹林口 AN</td><td>离关/过场</td><td>可选黑场锚</td></tr>
+</table>
+<h2>风险降级</h2>
+<table>
+<tr><td>风险</td><td>降级</td></tr>
+<tr><td>策划触发清单晚到</td><td>D5 用概念默认位，D6 改名</td></tr>
+<tr><td>无头显</td><td>Simulator + 已知问题标「未实机」</td></tr>
+<tr><td>时间不够</td><td>砍 wing 细节，保 hall/yard/kitchen/bamboo</td></tr>
+</table>
+<p>路径：`/workspace/VRgame/docs/场景/一周试玩_场景日表.md`</p></body></html>

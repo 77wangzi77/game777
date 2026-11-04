@@ -1,0 +1,191 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>四层空间流线与灯光制作清单</title>
+<style>
+body{font-family:sans-serif;max-width:900px;margin:24px auto;padding:0 16px;line-height:1.5;color:#111}
+h1{font-size:1.6rem} h2{font-size:1.25rem;margin-top:1.4em} h3{font-size:1.1rem}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:0.92rem}
+th,td{border:1px solid #ccc;padding:6px 8px;vertical-align:top}
+th{background:#f3f3f3}
+.meta{color:#555;font-size:0.9rem}
+pre{background:#f6f6f6;padding:10px;overflow:auto}
+li{margin-left:1.2em}
+</style></head><body>
+<h1>四层空间流线与灯光制作清单（场景岗）</h1>
+
+<p class="meta">岗位：VR场景制作 · 汇报 → 制作统筹  </p>
+<p class="meta">依据：用户确认「这四个」= 关卡概念四层封闭关（2026-11-03）  </p>
+<p class="meta">对齐：`docs/关卡概念/四层连通说明.md` · `四层明暗关系.md` · `四关场景模型清单.md` · 原画 `四层连通总览.jpg`  </p>
+<p class="meta">平台：PCVR · Unity · 古剑同调气质  </p>
+<p class="meta">修订：2026-11-03</p>
+
+<h2>0. 锁定结论</h2>
+
+<table>
+<tr><th>项</th><th>结论</th></tr>
+<tr><td>首版场景范围</td><td>**四层全做**：L1 高山 → L2 石桥 → L3 岩浆 → L4 洞府</td></tr>
+<tr><td>外壳</td><td>全程封闭；层间仅楼梯 / 竖井 / 封印门连通</td></tr>
+<tr><td>玩家流向</td><td>入 L1 → 升 L2 过桥 → 穿 L3 闯岩浆 → 升 L4 揭晓</td></tr>
+<tr><td>灯光基线</td><td>见 `四层明暗关系.md`（L1/L2 冷；L3 底光暖；L4 中心暖）</td></tr>
+<tr><td>命名</td><td>`ENV_L0x_*` / `PROP_L0x_*` / `LIT_L0x_*`（英文文件名）</td></tr>
+</table>
+
+<p>叙事 VS《残简三声》驿站块保留为策划/概念文档；<strong>本场景制作清单以四层封闭关为准</strong>，不与驿站七块混用同一 ENV 前缀。</p>
+
+<hr/>
+
+<h2>1. 总流线（VR 舒适）</h2>
+
+<pre><code>
+Spawn@L1 崖径落点
+  → 亭台引导（冷天窗）
+  → 中央石阶 / 天窗升层口 → L2
+  → 牌楼入桥 → 桥面灯笼引导 → 门楼
+  → 门楼竖井 / 楼梯 → L3
+  → 玄武岩平台 + 链桥（岩浆底光）→ 封印门
+  → 封印门后竖井 → L4
+  → 侧廊汇入大厅 → 祭坛焦点 → 出口/存档锚
+</code></pre>
+
+<p>通用约定（摘自场景规范）：</p>
+
+<li>1 unit = 1 m；通道净宽 ≥ 1.2 m；互动高 0.9–1.4 m  </li>
+<li>传送为主；每层至少 2 个可见 `Anchor_Teleport`；关键朝向 `Anchor_Look`  </li>
+<li>深渊 / 岩浆边：护栏或不可见碰撞墙，禁强迫高速旋转  </li>
+<li>Blockout 先灰模 + 光源色，再贴图</li>
+
+<hr/>
+
+<h2>2. 分层空间块任务</h2>
+
+<h3>L1 · 高山洞窟 `ENV_L01_Mountain`</h3>
+
+<table>
+<tr><th>序</th><th>Prefab / 块</th><th>职责</th><th>锚点</th><th>灯光</th><th>P</th></tr>
+<tr><td>1</td><td>`ENV_L01_CaveMouth`</td><td>封闭洞口围框、入关边界</td><td>Teleport 入场</td><td>洞外暗 / 洞内微冷</td><td>P0</td></tr>
+<tr><td>2</td><td>`ENV_L01_CliffPath`</td><td>可走崖径、回头路径</td><td>Teleport 中段</td><td>路径被天窗冷光扫到</td><td>P0</td></tr>
+<tr><td>3</td><td>`ENV_L01_Pavilion`</td><td>峰顶/石柱亭，视觉锚</td><td>Look 朝升层口</td><td>Accent：亭内弱暖</td><td>P0</td></tr>
+<tr><td>4</td><td>`ENV_L01_Stair_Set`</td><td>苔石阶 → 升层</td><td>—</td><td>阶面吃冷光</td><td>P0</td></tr>
+<tr><td>5</td><td>`ENV_L01_PeakPlatform`</td><td>观月/天窗平台</td><td>Teleport 升层前</td><td>Key：天窗冷光自上而下</td><td>P0</td></tr>
+<tr><td>6</td><td>`ENV_L01_CliffWall_Kit`</td><td>封闭崖壁套件</td><td>—</td><td>Fill 青灰弱</td><td>P0</td></tr>
+<tr><td>7</td><td>`PROP_L01_PineTree`</td><td>崖松 LOD</td><td>—</td><td>剪影</td><td>P0</td></tr>
+<tr><td>8</td><td>`PROP_L01_WindChime` / `PrayerTablet`</td><td>氛围道具</td><td>可选交互圈</td><td>—</td><td>P1</td></tr>
+</table>
+
+<p><strong>LIT 包</strong>：`LIT_L01_Mountain_ColdSkylight`（Key 冷顶光 + Fill 青灰 + Accent 火把暖点）  </p>
+<p><strong>层验收</strong>：戴头显从落点沿冷光走到升层口，无坠落焦虑、门洞可读。</p>
+
+<hr/>
+
+<h3>L2 · 石桥厅 `ENV_L02_Bridge`</h3>
+
+<table>
+<tr><th>序</th><th>Prefab / 块</th><th>职责</th><th>锚点</th><th>灯光</th><th>P</th></tr>
+<tr><td>1</td><td>`ENV_L02_CanyonWall_L/R`</td><td>左右峡谷封闭壁</td><td>—</td><td>高窗冷光入射</td><td>P0</td></tr>
+<tr><td>2</td><td>`ENV_L02_Paifang`</td><td>桥首牌楼</td><td>Teleport 桥前；Look 朝桥</td><td>Accent 门灯</td><td>P0</td></tr>
+<tr><td>3</td><td>`ENV_L02_BridgeDeck` + `BridgeArch`</td><td>可拼接桥面/拱</td><td>Teleport 桥中</td><td>Key：斜切冷光斑</td><td>P0</td></tr>
+<tr><td>4</td><td>`ENV_L02_MistPit`</td><td>桥下雾坑 + 碰撞屏障</td><td>—</td><td>雾反射微亮</td><td>P0</td></tr>
+<tr><td>5</td><td>`ENV_L02_FarGatehouse`</td><td>桥尾门楼、升层入口</td><td>Teleport 门楼；Look 入门</td><td>门内过渡光</td><td>P0</td></tr>
+<tr><td>6</td><td>`PROP_L02_Rail_Lion` + `GuardianLion`</td><td>栏杆/石狮</td><td>—</td><td>—</td><td>P0</td></tr>
+<tr><td>7</td><td>`PROP_L02_OilLamp`</td><td>桥栏油灯暖点列</td><td>—</td><td>Accent 暖引导</td><td>P0</td></tr>
+<tr><td>8</td><td>`PROP_L02_Door_Double`</td><td>双开木门</td><td>触发占位</td><td>—</td><td>P0</td></tr>
+<tr><td>9</td><td>`PROP_L02_BambooSlips`</td><td>线索竹简</td><td>检视高 0.9–1.4</td><td>—</td><td>P1</td></tr>
+</table>
+
+<p><strong>LIT 包</strong>：`LIT_L02_Bridge_ColdShaft`（高窗冷斜光 + 雾 Fill + 灯笼 Accent）  </p>
+<p><strong>层验收</strong>：桥面净宽够、雾坑不可坠；冷光斑 + 暖灯交替引导到门楼。</p>
+
+<hr/>
+
+<h3>L3 · 岩浆窟 `ENV_L03_Magma`</h3>
+
+<table>
+<tr><th>序</th><th>Prefab / 块</th><th>职责</th><th>锚点</th><th>灯光</th><th>P</th></tr>
+<tr><td>1</td><td>`ENV_L03_CavernShell`</td><td>洞窟封闭外壳</td><td>—</td><td>几乎无天光</td><td>P0</td></tr>
+<tr><td>2</td><td>`ENV_L03_BasaltPlatform`</td><td>主平台组</td><td>Teleport 入层</td><td>底缘吃岩浆光</td><td>P0</td></tr>
+<tr><td>3</td><td>`ENV_L03_Walkway`</td><td>窄道（≥1.2 m）</td><td>Teleport 中段</td><td>下亮上暗</td><td>P0</td></tr>
+<tr><td>4</td><td>`ENV_L03_LavaRiver`</td><td>岩浆河面网格+材质</td><td>—</td><td>**Key = 底光**</td><td>P0</td></tr>
+<tr><td>5</td><td>`PROP_L03_ChainBridge`</td><td>链板吊桥</td><td>Look 对岸封印门</td><td>底光勾边</td><td>P0</td></tr>
+<tr><td>6</td><td>`ENV_L03_SealGate`</td><td>圆形封印大门</td><td>Teleport 门前</td><td>Accent 门缝辉光</td><td>P0</td></tr>
+<tr><td>7</td><td>`PROP_L03_Brazier`</td><td>火盆高亮点</td><td>—</td><td>Accent</td><td>P0</td></tr>
+<tr><td>8</td><td>`PROP_L03_IronRail`</td><td>铁石护栏</td><td>—</td><td>—</td><td>P0</td></tr>
+<tr><td>9</td><td>`FX_L03_HeatHaze`</td><td>热扭曲挂点</td><td>—</td><td>—</td><td>P1</td></tr>
+<tr><td>10</td><td>`ENV_L03_Stair_Basalt`</td><td>通往封印后竖井</td><td>—</td><td>光色泄漏向 L4</td><td>P0</td></tr>
+</table>
+
+<p><strong>LIT 包</strong>：`LIT_L03_Magma_UpLight`（岩浆 Key 上照 + 近黑 Fill + 火盆 Accent；高饱和暖）  </p>
+<p><strong>舒适硬规则</strong>：岩浆表面不可走；护栏/隐形墙连续；链桥两端落点加大、防滑视觉。  </p>
+<p><strong>层验收</strong>：底光可读路径；到封印门无眩晕强迫旋转；竖井光色向 L4 暖过渡一档。</p>
+
+<hr/>
+
+<h3>L4 · 洞府殿 `ENV_L04_Grotto`</h3>
+
+<table>
+<tr><th>序</th><th>Prefab / 块</th><th>职责</th><th>锚点</th><th>灯光</th><th>P</th></tr>
+<tr><td>1</td><td>`ENV_L04_HallShell`</td><td>石殿大厅外壳</td><td>Teleport 入殿</td><td>四角沉、中心亮</td><td>P0</td></tr>
+<tr><td>2</td><td>`ENV_L04_FloorTiles`</td><td>潮湿地砖</td><td>—</td><td>弱反射</td><td>P0</td></tr>
+<tr><td>3</td><td>`ENV_L04_Pillar_CloudDragon` ×2+</td><td>云龙雕柱对称</td><td>—</td><td>柱侧 Fill</td><td>P0</td></tr>
+<tr><td>4</td><td>`ENV_L04_CircularRelief`</td><td>后壁圆雕</td><td>Look 朝浮雕</td><td>—</td><td>P0</td></tr>
+<tr><td>5</td><td>`ENV_L04_AltarDais` + `PROP_L04_AltarTable`</td><td>祭坛台基/桌</td><td>Teleport 台前；终局 Look</td><td>**Key 暖顶光**</td><td>P0</td></tr>
+<tr><td>6</td><td>`PROP_L04_BambooSlips_Stack`</td><td>竹简堆（揭晓物）</td><td>检视圈</td><td>Accent 局部</td><td>P0</td></tr>
+<tr><td>7</td><td>`PROP_L04_HangingLantern` / `CandleCluster` / `IncenseBurner`</td><td>吊灯/烛/香炉</td><td>—</td><td>Accent</td><td>P0</td></tr>
+<tr><td>8</td><td>`ENV_L04_SidePassage`</td><td>侧廊（可选回落）</td><td>Teleport</td><td>弱于大厅</td><td>P1</td></tr>
+<tr><td>9</td><td>`PROP_L04_StoneLantern`</td><td>石灯笼</td><td>—</td><td>—</td><td>P0</td></tr>
+<tr><td>10</td><td>出口/存档锚</td><td>可回落存档点</td><td>`Anchor_Save`</td><td>—</td><td>P0</td></tr>
+</table>
+
+<p><strong>LIT 包</strong>：`LIT_L04_Grotto_AltarWarm`（祭坛暖顶光 + 柱侧弱反射 + 烛火 Accent；中饱和暖）  </p>
+<p><strong>层验收</strong>：入殿视线自然落在祭坛/圆雕；坐姿可完成揭晓交互；无过曝闪切。</p>
+
+<hr/>
+
+<h2>3. 层间连通（场景必做）</h2>
+
+<table>
+<tr><th>ID</th><th>连通</th><th>场景交付</th><th>光过渡</th></tr>
+<tr><td>C12</td><td>L1→L2 天窗/石阶升层口</td><td>洞口框 + 阶 + 双方 Teleport</td><td>冷→冷，亮度略升</td></tr>
+<tr><td>C23</td><td>L2→L3 门楼竖井/楼梯</td><td>竖井壳 + 梯 + 碰撞</td><td>冷→暖底光，竖井泄漏岩浆色一档</td></tr>
+<tr><td>C34</td><td>L3→L4 封印门后竖井</td><td>门后竖井 + 双方 Teleport</td><td>高饱和暖→中饱和暖</td></tr>
+</table>
+
+<p>每连通口：净空防碰头；落点平坦；`Anchor_Look` 指向下一层主引导物。</p>
+
+<hr/>
+
+<h2>4. 制作优先级（场景排期建议）</h2>
+
+<p>不设日/周死线；按可戴头显里程碑：</p>
+
+<table>
+<tr><th>里程碑</th><th>内容</th><th>验收</th></tr>
+<tr><td>S0 Blockout</td><td>四层灰模外壳 + 三连通 + 全 Teleport</td><td>传送走通四层</td></tr>
+<tr><td>S1 主建筑</td><td>每层 1 主建筑（亭/牌楼门楼/封印门/祭坛柱）</td><td>原画体块可读</td></tr>
+<tr><td>S2 LIT 四包</td><td>四套 Volume/灯光预设挂上</td><td>明暗关系对照原画</td></tr>
+<tr><td>S3 P0 道具</td><td>灯笼/石狮/火盆/竹简堆等 P0</td><td>引导与焦点成立</td></tr>
+<tr><td>S4 舒适抛光</td><td>护栏、雾坑、热扭曲挂点、坐姿交互位</td><td>无坠落/眩晕硬伤</td></tr>
+</table>
+
+<p>模型细目以 `四关场景模型清单.md` 为准；本文件管 <strong>流线、锚点、灯光包、层验收</strong>。</p>
+
+<hr/>
+
+<h2>5. 邻岗接口</h2>
+
+<table>
+<tr><th>邻岗</th><th>我交付</th><th>我需要</th></tr>
+<tr><td>关卡概念</td><td>本清单；块命名与原画一致</td><td>连通口变更同步</td></tr>
+<tr><td>策划</td><td>每层 Teleport/Look/交互占位名</td><td>任务触发区清单（挂哪一层）</td></tr>
+<tr><td>Unity程序</td><td>锚点命名、碰撞层、LIT 预设名</td><td>XR 传送组件挂点约定</td></tr>
+<tr><td>UI美术</td><td>世界空间提示位（门缝/祭坛可选）</td><td>舒适度遮罩需求</td></tr>
+</table>
+
+<hr/>
+
+<h2>6. 与旧规范修订</h2>
+
+<li>`docs/场景与资产规范.md` §4 / §8：主氛围改为 **四层分套 LIT**（不再三选一单包）。  </li>
+<li>驿站《残简三声》七块：不进本四层 Prefab 表；若叙事 VS 另开场景，另立 `ENV_Inn_*` 前缀，避免与 `ENV_L01_Mountain` 冲突。</li>
+
+<hr/>
+
+<p>路径：`/workspace/VRgame/docs/场景/四层空间流线与灯光制作清单.md`</p>
+</body></html>

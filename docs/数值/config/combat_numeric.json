@@ -1,0 +1,220 @@
+{
+  "schema": "VRgame.Config.CombatNumeric",
+  "version": "v1-skeleton",
+  "_meta": {
+    "tableId": "combat_numeric",
+    "displayName": "战斗数值表",
+    "layer": "split",
+    "frontendKeys": ["playerBaseByLevel", "weaponBase", "skillNumeric", "gpRules", "spRules", "mpRules", "damageFormulas", "balanceTargets"],
+    "backendKeys": ["ttkModel", "enemyBudget", "levelEconomy", "combatAuthority"],
+    "sourceOfTruth": [
+      "docs/数值/数值配置_前端_v1.json",
+      "docs/数值/数值配置_后端_v1.json"
+    ],
+    "notes": "可配置战斗权威值；导入时前端读表现/导入字段，后端读 TTK 与 enemyBudget。本骨架示例行对齐 v1，完整曲线仍以 v1 双表为准。",
+    "fields": {
+      "playerBaseByLevel[]": "level,hp,mp,sp,atk,matk,def,mdef,crit,critDmg",
+      "weaponBase[]": "weaponId,atk,matk,speedTier,gpOnHit",
+      "skillNumeric[]": "skillId,mp,sp,gp,cd,chargeTime,mul,formulaId,+optional hitCount/aoeRadius/impactRadius",
+      "enemyBudget[]": "id,level,hp,atk,matk,def,mdef,ttkSec,role,fightLevel,phaseHpPct?",
+      "levelEconomy[]": "levelId,timeLimitSec,winRewardSilver,loseRewardSilver,expWin,expLose,respawnCount",
+      "ttkModel": "avgSlashMul,theoryHitsPerSecMid,trash/eliteBoss factors,exprs"
+    }
+  },
+  "ttkModel": {
+    "avgSlashMul": 1.15,
+    "theoryHitsPerSecMid": 1.2,
+    "trash": {
+      "vrHitFactor": 0.85,
+      "uptime": 0.95,
+      "dpsExpr": "slashHit * 1.2 * 0.85 * 0.95"
+    },
+    "eliteBoss": {
+      "vrHitFactor": 0.75,
+      "uptime": 0.85,
+      "skillUpliftByRole": {
+        "elite": 1.2,
+        "bossEarly": 1.18,
+        "bossMid": 1.15,
+        "bossLate": 1.12,
+        "bossFinal": 1.1
+      }
+    },
+    "slashHitExpr": "(atk+weaponAtk) * 1.15 * (1-def/(def+50)) * (1+crit*(critDmg-1))",
+    "phaseInvulnExcluded": true
+  },
+  "playerBaseByLevel": [
+    {
+      "level": 1,
+      "hp": 100,
+      "mp": 60,
+      "sp": 70,
+      "atk": 12,
+      "matk": 8,
+      "def": 5,
+      "mdef": 4,
+      "crit": 0.05,
+      "critDmg": 1.5
+    },
+    {
+      "level": 3,
+      "hp": 132,
+      "mp": 76,
+      "sp": 78,
+      "atk": 16,
+      "matk": 11,
+      "def": 7,
+      "mdef": 5,
+      "crit": 0.06,
+      "critDmg": 1.5
+    },
+    {
+      "level": 5,
+      "hp": 170,
+      "mp": 95,
+      "sp": 86,
+      "atk": 21,
+      "matk": 14,
+      "def": 9,
+      "mdef": 7,
+      "crit": 0.07,
+      "critDmg": 1.55
+    }
+  ],
+  "weaponBase": [
+    {
+      "weaponId": "WPN_shuangyue_wuhen",
+      "atk": 12,
+      "matk": 0,
+      "speedTier": "mid",
+      "gpOnHit": 10,
+      "notes": "双月无痕剑；对齐角色系统 Lv1 建议"
+    }
+  ],
+  "skillNumeric": [
+    {
+      "skillId": "SK_slash",
+      "mp": 0,
+      "sp": 0,
+      "gp": 0,
+      "cd": 0,
+      "chargeTime": 0,
+      "mul": [1.0, 1.1, 1.35],
+      "formulaId": "DMG_melee_light"
+    },
+    {
+      "skillId": "SK_tianhui_wuying",
+      "mp": 30,
+      "sp": 0,
+      "gp": 100,
+      "cd": 12,
+      "chargeTime": 3,
+      "mul": 1.35,
+      "hitCount": 5,
+      "formulaId": "DMG_ult_slash",
+      "aoeRadius": 3.5
+    },
+    {
+      "skillId": "SK_line_swordqi",
+      "mp": 15,
+      "sp": 0,
+      "gp": 0,
+      "cd": 5,
+      "chargeTime": 0,
+      "mul": 1.2,
+      "formulaId": "DMG_line"
+    }
+  ],
+  "enemyBudget": [
+    {
+      "id": "N_bandit",
+      "level": 1,
+      "hp": 110,
+      "atk": 11,
+      "matk": 0,
+      "def": 3,
+      "mdef": 0,
+      "ttkSec": "4-5",
+      "role": "trash",
+      "fightLevel": 1
+    },
+    {
+      "id": "E_double",
+      "level": 3,
+      "hp": 720,
+      "atk": 14,
+      "matk": 0,
+      "def": 5,
+      "mdef": 4,
+      "ttkSec": "24-30",
+      "role": "elite",
+      "fightLevel": 3
+    },
+    {
+      "id": "B_host",
+      "level": 3,
+      "hp": 2500,
+      "atk": 16,
+      "matk": 8,
+      "def": 6,
+      "mdef": 5,
+      "ttkSec": "90-100",
+      "role": "boss",
+      "fightLevel": 3,
+      "phaseHpPct": [50]
+    }
+  ],
+  "levelEconomy": [
+    {
+      "levelId": "LV_inn_night",
+      "timeLimitSec": 0,
+      "winRewardSilver": 80,
+      "loseRewardSilver": 0,
+      "expWin": 60,
+      "expLose": 5,
+      "respawnCount": 3,
+      "notes": "VS 残简三声；剧情关"
+    }
+  ],
+  "gpRules": {
+    "max": 100,
+    "onHitMin": 8,
+    "onHitMax": 12,
+    "perfectBlock": 15,
+    "breakPenalty": 30,
+    "chargeMinSec": 0.6,
+    "chargeMaxSec": 3.0,
+    "chargeDmgScaleMin": 1.0,
+    "chargeDmgScaleMax": 1.35
+  },
+  "spRules": {
+    "maxBase": 70,
+    "runCostPerSec": 8,
+    "rollCost": 22,
+    "regenPerSecIdle": 12,
+    "walkOnlyWhenZero": true
+  },
+  "mpRules": {
+    "regenCombatPerSec": 0,
+    "regenOutOfCombatPerSec": 5,
+    "blockSkillsWhenInsufficient": true
+  },
+  "damageFormulas": [
+    {
+      "formulaId": "DMG_melee_light",
+      "expr": "(atk + weaponAtk) * skillMul * (1 - def/(def+K_def))",
+      "K_def": 50
+    },
+    {
+      "formulaId": "DMG_ult_slash",
+      "expr": "(atk + weaponAtk) * skillMul * chargeScale * hitCount * (1 - def/(def+K_def))",
+      "K_def": 50
+    }
+  ],
+  "balanceTargets": {
+    "trashTTK": "3-6s",
+    "eliteTTK": "20-40s",
+    "bossTTK": "1.5-3.5min",
+    "reference": "ARPG; see docs/数值/数值平衡_v1.md"
+  }
+}

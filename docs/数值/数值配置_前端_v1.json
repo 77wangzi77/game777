@@ -1,0 +1,471 @@
+{
+  "version": "v1",
+  "meta": {
+    "project": "VRgame",
+    "audience": "数值策划/程序导入",
+    "engine": "Unity",
+    "platform": "PCVR",
+    "basedOn": "docs/策划/数值配置_表示例.json (v0)",
+    "notes": "古剑同调剧情关卡；战斗服务叙事；ARPG 手感锚见数值平衡_v1.md。表分 frontend(可导入) 与 backend.ttkModel(推算假设，程序可不读)。",
+    "simKind": "desktop_calc",
+    "simNote": "未跑实机；TTK 为桌面推算",
+    "role": "client_import",
+    "pairedBackend": "数值配置_后端_v1.json"
+  },
+  "playerBaseByLevel": [
+    {
+      "level": 1,
+      "hp": 100,
+      "mp": 60,
+      "sp": 70,
+      "atk": 12,
+      "matk": 8,
+      "def": 5,
+      "mdef": 4,
+      "crit": 0.05,
+      "critDmg": 1.5
+    },
+    {
+      "level": 2,
+      "hp": 115,
+      "mp": 68,
+      "sp": 74,
+      "atk": 14,
+      "matk": 9,
+      "def": 6,
+      "mdef": 5,
+      "crit": 0.05,
+      "critDmg": 1.5
+    },
+    {
+      "level": 3,
+      "hp": 132,
+      "mp": 76,
+      "sp": 78,
+      "atk": 16,
+      "matk": 11,
+      "def": 7,
+      "mdef": 5,
+      "crit": 0.06,
+      "critDmg": 1.5
+    },
+    {
+      "level": 4,
+      "hp": 150,
+      "mp": 85,
+      "sp": 82,
+      "atk": 18,
+      "matk": 12,
+      "def": 8,
+      "mdef": 6,
+      "crit": 0.06,
+      "critDmg": 1.55
+    },
+    {
+      "level": 5,
+      "hp": 170,
+      "mp": 95,
+      "sp": 86,
+      "atk": 21,
+      "matk": 14,
+      "def": 9,
+      "mdef": 7,
+      "crit": 0.07,
+      "critDmg": 1.55
+    },
+    {
+      "level": 6,
+      "hp": 192,
+      "mp": 105,
+      "sp": 90,
+      "atk": 24,
+      "matk": 16,
+      "def": 10,
+      "mdef": 8,
+      "crit": 0.07,
+      "critDmg": 1.55
+    },
+    {
+      "level": 7,
+      "hp": 216,
+      "mp": 116,
+      "sp": 94,
+      "atk": 27,
+      "matk": 18,
+      "def": 11,
+      "mdef": 9,
+      "crit": 0.08,
+      "critDmg": 1.6
+    },
+    {
+      "level": 8,
+      "hp": 242,
+      "mp": 128,
+      "sp": 98,
+      "atk": 30,
+      "matk": 20,
+      "def": 12,
+      "mdef": 10,
+      "crit": 0.08,
+      "critDmg": 1.6
+    },
+    {
+      "level": 9,
+      "hp": 270,
+      "mp": 140,
+      "sp": 100,
+      "atk": 33,
+      "matk": 22,
+      "def": 13,
+      "mdef": 11,
+      "crit": 0.09,
+      "critDmg": 1.6
+    },
+    {
+      "level": 10,
+      "hp": 300,
+      "mp": 155,
+      "sp": 100,
+      "atk": 36,
+      "matk": 24,
+      "def": 14,
+      "mdef": 12,
+      "crit": 0.09,
+      "critDmg": 1.65
+    }
+  ],
+  "weaponBase": [
+    {
+      "weaponId": "WPN_shuangyue_wuhen",
+      "atk": 12,
+      "matk": 0,
+      "speedTier": "mid",
+      "gpOnHit": 10,
+      "notes": "v0 白字14→12，贴近角色文档 Lv1 建议 12–16，并压理论刀伤以匹配 ARPG 杂兵 TTK"
+    }
+  ],
+  "damageFormulas": [
+    {
+      "formulaId": "DMG_melee_light",
+      "expr": "(atk + weaponAtk) * skillMul * (1 - def/(def+K_def))",
+      "K_def": 50
+    },
+    {
+      "formulaId": "DMG_line",
+      "expr": "(atk*0.6 + matk*0.6 + weaponAtk) * skillMul * (1 - mdef/(mdef+K_mdef))",
+      "K_mdef": 50
+    },
+    {
+      "formulaId": "DMG_sin",
+      "expr": "(atk*0.5 + matk*0.7) * skillMul * (1 - mdef/(mdef+K_mdef))",
+      "K_mdef": 50
+    },
+    {
+      "formulaId": "DMG_parabola",
+      "expr": "(atk*0.4 + matk*0.9) * skillMul * (1 - mdef/(mdef+K_mdef))",
+      "K_mdef": 50
+    },
+    {
+      "formulaId": "DMG_ult_slash",
+      "expr": "(atk + weaponAtk) * skillMul * chargeScale * hitCount * (1 - def/(def+K_def))",
+      "K_def": 50,
+      "notes": "v1 增 hitCount：对齐角色「多段影斩」；单段仍用 skillMul"
+    }
+  ],
+  "skillNumeric": [
+    {
+      "skillId": "SK_slash",
+      "mp": 0,
+      "sp": 0,
+      "gp": 0,
+      "cd": 0,
+      "chargeTime": 0,
+      "mul": [
+        1.0,
+        1.1,
+        1.35
+      ],
+      "formulaId": "DMG_melee_light"
+    },
+    {
+      "skillId": "SK_tianhui_wuying",
+      "mp": 30,
+      "sp": 0,
+      "gp": 100,
+      "cd": 12,
+      "chargeTime": 3,
+      "mul": 1.35,
+      "hitCount": 5,
+      "formulaId": "DMG_ult_slash",
+      "aoeRadius": 3.5,
+      "notes": "新增 hitCount=5（多段影斩）；技能示例 JSON 无此字段，以本表为准并回写程序"
+    },
+    {
+      "skillId": "SK_line_swordqi",
+      "mp": 15,
+      "sp": 0,
+      "gp": 0,
+      "cd": 5,
+      "chargeTime": 0,
+      "mul": 1.2,
+      "formulaId": "DMG_line"
+    },
+    {
+      "skillId": "SK_sin_wave",
+      "mp": 18,
+      "sp": 5,
+      "gp": 0,
+      "cd": 7,
+      "chargeTime": 0,
+      "mul": 1.25,
+      "formulaId": "DMG_sin",
+      "notes": "v0 mul 1.0→1.25，避免 Sin 技相对直线过废；技能示例仍写 1.0，导入以数值表为准"
+    },
+    {
+      "skillId": "SK_parabola_fall",
+      "mp": 22,
+      "sp": 0,
+      "gp": 0,
+      "cd": 8,
+      "chargeTime": 0,
+      "mul": 1.5,
+      "formulaId": "DMG_parabola",
+      "impactRadius": 1.5
+    }
+  ],
+  "gpRules": {
+    "max": 100,
+    "onHitMin": 8,
+    "onHitMax": 12,
+    "perfectBlock": 15,
+    "breakPenalty": 30,
+    "chargeMinSec": 0.6,
+    "chargeMaxSec": 3.0,
+    "chargeDmgScaleMin": 1.0,
+    "chargeDmgScaleMax": 1.35
+  },
+  "spRules": {
+    "maxBase": 70,
+    "runCostPerSec": 8,
+    "rollCost": 22,
+    "regenPerSecIdle": 12,
+    "walkOnlyWhenZero": true,
+    "notes": "v0 max80/roll20 → 70/22，锚定约 2–3 次滚 + 短加速"
+  },
+  "mpRules": {
+    "regenCombatPerSec": 0,
+    "regenOutOfCombatPerSec": 5,
+    "blockSkillsWhenInsufficient": true,
+    "notes": "战中不回蓝；Boss 转阶段演出可按脱战回蓝（程序可选）"
+  },
+  "enemyBudget": [
+    {
+      "id": "N_bandit",
+      "level": 1,
+      "hp": 110,
+      "atk": 11,
+      "matk": 0,
+      "def": 3,
+      "mdef": 0,
+      "ttkSec": "4-5",
+      "role": "trash",
+      "fightLevel": 1
+    },
+    {
+      "id": "N_bandit_r",
+      "level": 1,
+      "hp": 95,
+      "atk": 10,
+      "matk": 0,
+      "def": 0,
+      "mdef": 0,
+      "ttkSec": "3-4",
+      "role": "trash",
+      "fightLevel": 1
+    },
+    {
+      "id": "N_cult_s",
+      "level": 2,
+      "hp": 125,
+      "atk": 8,
+      "matk": 10,
+      "def": 3,
+      "mdef": 4,
+      "ttkSec": "4-6",
+      "role": "trash",
+      "fightLevel": 2
+    },
+    {
+      "id": "N_puppet",
+      "level": 2,
+      "hp": 200,
+      "atk": 18,
+      "matk": 0,
+      "def": 10,
+      "mdef": 2,
+      "ttkSec": "7-9",
+      "role": "trash",
+      "fightLevel": 2,
+      "notes": "装甲杂兵；刻意略超杂兵 6s 上沿，预习破绽"
+    },
+    {
+      "id": "N_shade",
+      "level": 2,
+      "hp": 140,
+      "atk": 9,
+      "matk": 6,
+      "def": 4,
+      "mdef": 3,
+      "ttkSec": "5-6",
+      "role": "trash",
+      "fightLevel": 2
+    },
+    {
+      "id": "E_double",
+      "level": 3,
+      "hp": 720,
+      "atk": 14,
+      "matk": 0,
+      "def": 5,
+      "mdef": 4,
+      "ttkSec": "24-30",
+      "role": "elite",
+      "fightLevel": 3
+    },
+    {
+      "id": "E_witness",
+      "level": 4,
+      "hp": 800,
+      "atk": 15,
+      "matk": 0,
+      "def": 6,
+      "mdef": 4,
+      "ttkSec": "25-35",
+      "role": "elite",
+      "fightLevel": 4,
+      "notes": "v1 增补；机制以战斗_NPC与BOSS 为准"
+    },
+    {
+      "id": "E_ink",
+      "level": 5,
+      "hp": 900,
+      "atk": 12,
+      "matk": 14,
+      "def": 5,
+      "mdef": 8,
+      "ttkSec": "28-38",
+      "role": "elite",
+      "fightLevel": 5,
+      "notes": "v1 增补；分身阶段有效 DPS 下降，表内 HP 按可打本体"
+    },
+    {
+      "id": "B_host",
+      "level": 3,
+      "hp": 2500,
+      "atk": 16,
+      "matk": 8,
+      "def": 6,
+      "mdef": 5,
+      "ttkSec": "90-100",
+      "role": "boss",
+      "fightLevel": 3,
+      "phaseHpPct": [
+        50
+      ],
+      "notes": "可选劝降；转阶段无敌不计入有效 DPS"
+    },
+    {
+      "id": "B_bamboo",
+      "level": 5,
+      "hp": 3800,
+      "atk": 20,
+      "matk": 10,
+      "def": 8,
+      "mdef": 7,
+      "ttkSec": "110-125",
+      "role": "boss",
+      "fightLevel": 5,
+      "phaseHpPct": [
+        60,
+        25
+      ]
+    },
+    {
+      "id": "B_shrine",
+      "level": 7,
+      "hp": 5600,
+      "atk": 24,
+      "matk": 14,
+      "def": 10,
+      "mdef": 9,
+      "ttkSec": "140-160",
+      "role": "boss",
+      "fightLevel": 7,
+      "phaseHpPct": [
+        70,
+        40,
+        15
+      ]
+    },
+    {
+      "id": "B_mirror",
+      "level": 9,
+      "hp": 7200,
+      "atk": 28,
+      "matk": 16,
+      "def": 12,
+      "mdef": 11,
+      "ttkSec": "160-180",
+      "role": "boss",
+      "fightLevel": 9,
+      "phaseHpPct": [
+        66,
+        33
+      ]
+    }
+  ],
+  "levelEconomy": [
+    {
+      "levelId": "LV_example",
+      "timeLimitSec": 900,
+      "winRewardSilver": 50,
+      "loseRewardSilver": 0,
+      "expWin": 40,
+      "expLose": 0,
+      "respawnCount": 3
+    },
+    {
+      "levelId": "LV_inn_night",
+      "timeLimitSec": 0,
+      "winRewardSilver": 80,
+      "loseRewardSilver": 0,
+      "expWin": 60,
+      "expLose": 5,
+      "respawnCount": 3,
+      "notes": "剧情关；失败仅安慰见闻/exp；不刷宝"
+    }
+  ],
+  "curveTables": {
+    "defMitigationSoftcap": {
+      "K_def": 50,
+      "K_mdef": 50,
+      "formula": "reduction = def/(def+K)"
+    },
+    "chapterLevelCapHint": {
+      "chapter1": 5,
+      "notes": "首章建议封顶 3–5；表仍给到 10 供后章 Boss"
+    }
+  },
+  "balanceTargets": {
+    "trashTTK": "3-6s",
+    "eliteTTK": "20-40s",
+    "bossTTK": "1.5-3.5min",
+    "playerDeathFromTrashCombo": "not within 2 hits at equal level",
+    "mpPool": "4-6 actives before empty without regen",
+    "spPool": "2-3 rolls + short run before walk-only",
+    "ultPhaseChunk": "15-25% of one boss phase HP at recommended fightLevel",
+    "reference": "ARPG clear-trash / pressure-elite / readable multi-phase boss; narrative-first"
+  },
+  "schema": "VRgame.NumericConfig",
+  "layer": "frontend"
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "VRgame.PlaytestMinNumeric",
+  "version": "week1-d2",
+  "layer": "backend_subset",
+  "meta": {
+    "purpose": "一周试玩最小占位；Combat.Skip/Threat.Resolve",
+    "importHint": "Assets/_Project/ScriptableObjects/Numeric/"
+  },
+  "rows": [
+    {
+      "id": "CFG_player_lv1",
+      "type": "player",
+      "hp": 100,
+      "atk": 12,
+      "mp": 60,
+      "sp": 70,
+      "threatPower": 40,
+      "note": "Lv1剑客"
+    },
+    {
+      "id": "CFG_n_trash_demo",
+      "type": "trash",
+      "hp": 110,
+      "atk": 11,
+      "def": 3,
+      "note": "杂兵演示"
+    }
+  ],
+  "threat": {
+    "id": "CFG_threat_deterrence",
+    "threshold": 30,
+    "successKey": "DLG_threat_ok",
+    "failKey": "DLG_threat_fail"
+  },
+  "events": [
+    "Numeric.TablesReady",
+    "Combat.Skip",
+    "Threat.Resolve"
+  ]
+}

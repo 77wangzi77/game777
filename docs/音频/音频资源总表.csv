@@ -1,0 +1,57 @@
+id,type,bus,duration_budget_sec,loop,spatial,trigger_event,cn_name,detail,priority,owner,status,path_placeholder,updated
+BGM_L01_explore,BGM,BGM,120,yes,2d,Level.Enter.L01,高山洞窟探索,冷风+远磬；古剑弦床；loop 90–120s；Snap_Explore,5,策划,draft,Audio/BGM/BGM_L01_explore,2026-11-04
+BGM_L02_explore,BGM,BGM,120,yes,2d,Level.Enter.L02,石桥厅探索,水滴/桥风；冷石厅；loop,5,策划,draft,Audio/BGM/BGM_L02_explore,2026-11-04
+BGM_L03_explore,BGM,BGM,120,yes,2d,Level.Enter.L03,岩浆窟探索,低鼓脉+远火噼；忌电子；loop,5,策划,draft,Audio/BGM/BGM_L03_explore,2026-11-04
+BGM_L04_explore,BGM,BGM,120,yes,2d,Level.Enter.L04,洞府殿探索,暖烛+弦；庄严；loop,5,策划,draft,Audio/BGM/BGM_L04_explore,2026-11-04
+BGM_inn_night,BGM,BGM,120,yes,2d,Level.Enter.LV_01_inn,驿站夜,风铃/更鼓；残简三声章1 VS 主床；loop,5,策划,draft,Audio/BGM/BGM_inn_night,2026-11-04
+BGM_battle_trash,BGM,BGM,90,yes,2d,Combat.Start.Trash,杂兵战,中速鼓点；相对探索≤+6dB；loop,4,策划,draft,Audio/BGM/BGM_battle_trash,2026-11-04
+BGM_battle_elite,BGM,BGM,90,yes,2d,Combat.Start.Elite,精英战,加低弦压迫；杂兵→精英 crossfade 1–1.5s,4,策划,draft,Audio/BGM/BGM_battle_elite,2026-11-04
+BGM_battle_boss,BGM,BGM,120,yes,2d,Combat.Start.Boss,Boss通床,无专曲时用；Snap_Boss,4,策划,draft,Audio/BGM/BGM_battle_boss,2026-11-04
+BGM_boss_host,BGM,BGM,120,yes,2d,BI_01_host,掌柜Boss主题,章1 B_host；intro可裁+loop,3,策划,draft,Audio/BGM/BGM_boss_host,2026-11-04
+BGM_boss_serpent,BGM,BGM,150,yes,2d,BI_serpent,蛇形Boss主题,化蛇/巴蛇；intro 5–12s 对齐 Timeline 后进 loop,2,策划,draft,Audio/BGM/BGM_boss_serpent,2026-11-04
+BGM_boss_minotaur,BGM,BGM,90,yes,2d,BI_minotaur_gate,牛头精英主题,蹄踏节奏短床；E_minotaur,3,策划,draft,Audio/BGM/BGM_boss_minotaur,2026-11-04
+BGM_stinger_win,BGM,BGM,8,no,2d,ST_win,胜利刺音,一击磬落；战斗床 fade≤1.5s 后播,3,策划,draft,Audio/BGM/BGM_stinger_win,2026-11-04
+BGM_stinger_lose,BGM,BGM,8,no,2d,ST_lose,失败刺音,弦断/简火意象,3,策划,draft,Audio/BGM/BGM_stinger_lose,2026-11-04
+BGM_cutscene_bed,BGM,BGM,60,yes,2d,CS.Generic,过场通用床,CS/SC 默认 stem；可按章换皮,5,策划,draft,Audio/BGM/BGM_cutscene_bed,2026-11-04
+BGM_cutscene_01_intro,BGM,BGM,25,no,2d,CS_01_intro,章1开场床,跟片约25s；九尾远啼走 Amb/SFX,4,策划,draft,Audio/BGM/BGM_cutscene_01_intro,2026-11-04
+SND_sword_whoosh,SND,SFX_Combat,1,no,3d,Player.Attack.Swing,剑挥空,轻斩起手 whoosh；同音叠消≤3,3,策划,draft,Audio/SFX/Combat/SND_sword_whoosh,2026-11-04
+SND_sword_hit,SND,SFX_Combat,1,no,3d,Player.Attack.Hit,剑命中,肉/影命中；与 VFX_hit_blade 同步,2,策划,draft,Audio/SFX/Combat/SND_sword_hit,2026-11-04
+SND_sword_block,SND,SFX_Combat,1,no,3d,Player.Block,格挡,金属短促，忌长啸,3,策划,draft,Audio/SFX/Combat/SND_sword_block,2026-11-04
+SND_sword_charge_loop,SND,SFX_Combat,3,yes,3d,Player.Charge,蓄力循环,渐强限幅；最长约3s,4,策划,draft,Audio/SFX/Combat/SND_sword_charge_loop,2026-11-04
+SND_sword_charge_ready,SND,SFX_Combat,1,no,3d,Player.ChargeReady,蓄力满,满蓄提示一声,4,策划,draft,Audio/SFX/Combat/SND_sword_charge_ready,2026-11-04
+SND_sk_tianhui_cast,SND,SFX_Combat,2,no,3d,SK_tianhui_wuying,天灰无影释放,技能释放；SkillConfig sfx.cast,3,策划,draft,Audio/SFX/Combat/SND_sk_tianhui_cast,2026-11-04
+SND_proj_line_fly,SND,SFX_Combat,2,yes,3d,Projectile.Line,直线弹道飞,shape=line 飞行环,4,策划,draft,Audio/SFX/Combat/SND_proj_line_fly,2026-11-04
+SND_proj_sin_fly,SND,SFX_Combat,2,yes,3d,Projectile.Sin,Sin弹道飞,shape=sin,4,策划,draft,Audio/SFX/Combat/SND_proj_sin_fly,2026-11-04
+SND_proj_parabola_land,SND,SFX_Combat,1,no,3d,Projectile.ParabolaLand,抛物落地,shape=parabola 落地,4,策划,draft,Audio/SFX/Combat/SND_proj_parabola_land,2026-11-04
+SND_aoe_self,SND,SFX_Combat,2,no,3d,Skill.SelfAoE,自身AoE,shape=selfAoE,4,策划,draft,Audio/SFX/Combat/SND_aoe_self,2026-11-04
+SND_ghost_whoosh,SND,SFX_Combat,1,no,3d,N_ghost.Move,鬼怪滑翔,雾袖切风；滑翔三段可读,3,策划,draft,Audio/SFX/Combat/SND_ghost_whoosh,2026-11-04
+SND_ghost_pounce_tele,SND,SFX_Combat,1,no,3d,N_ghost.PounceTele,鬼怪扑杀预警,与 ShadowStretch 同帧；VR可读预兆,1,策划,draft,Audio/SFX/Combat/SND_ghost_pounce_tele,2026-11-04
+SND_ghost_claw,SND,SFX_Combat,1,no,3d,N_ghost.Claw,鬼怪爪击,爪击命中/挥空分支可复用剪辑,3,策划,draft,Audio/SFX/Combat/SND_ghost_claw,2026-11-04
+SND_ghost_armor_pulse,SND,SFX_Combat,1,no,3d,N_ghost_armor.Pulse,半甲甲振,甲缘金光闪；格挡反应,3,策划,draft,Audio/SFX/Combat/SND_ghost_armor_pulse,2026-11-04
+SND_mino_charge_tele,SND,SFX_Combat,1,no,3d,E_minotaur.ChargeTele,牛头冲撞预警,≥0.4s；蹄铁火花；必可读,1,策划,draft,Audio/SFX/Combat/SND_mino_charge_tele,2026-11-04
+SND_mino_charge_loop,SND,SFX_Combat,3,yes,3d,E_minotaur.ChargeLoop,牛头冲撞循环,冲刺中环；MaxDistance~18m,2,策划,draft,Audio/SFX/Combat/SND_mino_charge_loop,2026-11-04
+SND_mino_axe,SND,SFX_Combat,1,no,3d,E_minotaur.Axe,牛头斧击,横斩/砸劈,2,策划,draft,Audio/SFX/Combat/SND_mino_axe,2026-11-04
+SND_mino_chain,SND,SFX_Combat,1,no,3d,E_minotaur.Chain,牛头链扫,链扫/掷链金属,3,策划,draft,Audio/SFX/Combat/SND_mino_chain,2026-11-04
+SND_serpent_tail_tele,SND,SFX_Combat,1,no,3d,B_serpent.TailTele,蛇甩尾预警,≥0.35s 尾颤；AOE逃点配合,1,策划,draft,Audio/SFX/Combat/SND_serpent_tail_tele,2026-11-04
+SND_serpent_spit,SND,SFX_Combat,1,no,3d,B_serpent.Spit,蛇毒涎,毒涎吐出,2,策划,draft,Audio/SFX/Combat/SND_serpent_spit,2026-11-04
+SND_serpent_coil,SND,SFX_Combat,2,no,3d,B_serpent.Coil,蛇盘压,盘压低沉挤压,2,策划,draft,Audio/SFX/Combat/SND_serpent_coil,2026-11-04
+SND_serpent_bite,SND,SFX_Combat,1,no,3d,B_serpent.Bite,蛇昂咬,昂首咬合,2,策划,draft,Audio/SFX/Combat/SND_serpent_bite,2026-11-04
+SND_enemy_death_ash,SND,SFX_Combat,2,no,3d,Enemy.Death,敌死亡散灰,KO可叠锣；散灰,3,策划,draft,Audio/SFX/Combat/SND_enemy_death_ash,2026-11-04
+SND_foot_stone,SND,SFX_World,1,no,3d,Player.Foot.Stone,石地脚步,轻脚步石面,5,策划,draft,Audio/SFX/World/SND_foot_stone,2026-11-04
+SND_foot_dirt,SND,SFX_World,1,no,3d,Player.Foot.Dirt,土地脚步,土/沙轻步；设计文档已列,5,策划,draft,Audio/SFX/World/SND_foot_dirt,2026-11-04
+SND_teleport_out,SND,SFX_World,1,no,3d,Teleport.Out,传送出发,AN_Teleport 出发,3,策划,draft,Audio/SFX/World/SND_teleport_out,2026-11-04
+SND_teleport_in,SND,SFX_World,1,no,3d,Teleport.In,传送落地,落地,3,策划,draft,Audio/SFX/World/SND_teleport_in,2026-11-04
+SND_door_wood,SND,SFX_World,2,no,3d,Door.Open,木门开合,驿站/厢房木门,4,策划,draft,Audio/SFX/World/SND_door_wood,2026-11-04
+SND_box_open,SND,SFX_World,1,no,3d,Item.BoxOpen,匣开,伪匣/线索匣,4,策划,draft,Audio/SFX/World/SND_box_open,2026-11-04
+SND_amb_L01_cold,AMB,Amb,120,yes,2d,Amb.L01,高山冷氛围,风、岩滴、远鸟稀；进战斗 duck −4〜−6,5,策划,draft,Audio/SFX/Amb/SND_amb_L01_cold,2026-11-04
+SND_amb_L02_bridge,AMB,Amb,120,yes,2d,Amb.L02,石桥氛围,水雾、桥隙风,5,策划,draft,Audio/SFX/Amb/SND_amb_L02_bridge,2026-11-04
+SND_amb_L03_magma,AMB,Amb,120,yes,2d,Amb.L03,岩浆氛围,低沸、远火噼；控尖啸,5,策划,draft,Audio/SFX/Amb/SND_amb_L03_magma,2026-11-04
+SND_amb_L04_grotto,AMB,Amb,120,yes,2d,Amb.L04,洞府氛围,烛爆、弱回声,5,策划,draft,Audio/SFX/Amb/SND_amb_L04_grotto,2026-11-04
+SND_amb_inn_night,AMB,Amb,120,yes,2d,Amb.Inn,驿站夜氛围,风铃、更鼓远、虫；LV_01_inn,4,策划,draft,Audio/SFX/Amb/SND_amb_inn_night,2026-11-04
+VO_narr_01_intro,VO,VO,25,no,2d,CS_01_intro,章1开场旁白,与字幕轴对齐；★句优先,2,策划,draft,Audio/VO/VO_narr_01_intro,2026-11-04
+VO_beast_name_zheng,VO,VO,3,no,2d,BeastName.Zheng,点名·猙,字幕「山海经·猙」；duck BGM −6〜−9dB,2,策划,draft,Audio/VO/VO_beast_name_zheng,2026-11-04
+VO_dlg_01_host_greet,VO,VO,4,no,2d,DLG_01_host,掌柜短句·招呼,可选；无VO仅字幕；draft扩展,5,策划,draft,Audio/VO/VO_dlg_01_host_greet,2026-11-04
+VO_beast_name_serpent,VO,VO,3,no,2d,BeastName.Serpent,点名·化蛇/巴蛇,Boss首次点名；KO可短尾复用,3,策划,draft,Audio/VO/VO_beast_name_serpent,2026-11-04
+SND_ui_confirm,SND,SFX_UI,1,no,2d,UI.Confirm,UI确认,菜单确认短音；不随战斗巨幅抬,5,策划,draft,Audio/SFX/UI/SND_ui_confirm,2026-11-04
+SND_ui_cancel,SND,SFX_UI,1,no,2d,UI.Cancel,UI取消,取消/返回,5,策划,draft,Audio/SFX/UI/SND_ui_cancel,2026-11-04
+SND_ui_evidence,SND,SFX_UI,1,no,2d,Evidence.Gained,证据获得提示,检视证据短提示,4,策划,draft,Audio/SFX/UI/SND_ui_evidence,2026-11-04

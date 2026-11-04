@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><title>Blender管线约定</title><style>body{font-family:sans-serif;max-width:800px;margin:24px auto;line-height:1.5}table{border-collapse:collapse;width:100%}td{border:1px solid #ccc;padding:6px}</style></head><body><h1>Blender 场景管线约定</h1>
+<p>&gt; 用户确认（2026-11-03）：**场景用 Blender 构建**  </p>
+<p>&gt; 本机：`C:\Program Files\Blender Foundation\Blender 5.0\blender.exe`  </p>
+<p>&gt; 对齐：四层封闭关 · `四层空间流线与灯光制作清单.md`</p>
+<h2>单位与轴向</h2>
+<tr><td>项</td><td>约定</td></tr>
+<tr><td>单位</td><td>1 Blender 单位 = 1 米</td></tr>
+<tr><td>导出 Unity</td><td>FBX；Scale 1；Forward -Z；Up Y（按 Unity 导入预设再验）</td></tr>
+<tr><td>命名</td><td>与清单一致：`ENV_L0x_*` / `PROP_L0x_*` / `LIT_L0x_*` / `Anchor_*`</td></tr>
+<h2>目录</h2>
+<pre>
+<p>/workspace/VRgame/blender/</p>
+<p>  scripts/          # 生成/更新灰模的 Python</p>
+<p>  blockout/         # .blend 灰模（同步到本机可开）</p>
+<pre>
+<p>本机工作副本：`VRgame_blender/`（由场景岗推送）</p>
+<h2>里程碑</h2>
+<li>S0：`VRgame_L01_L04_Blockout.blend` 四层灰模 + 锚点空物体</li>
+<li>S1+：按层拆分细化，仍保持 Collection 名与 ENV 前缀一致</li></body></html>

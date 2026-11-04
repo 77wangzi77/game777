@@ -1,0 +1,9 @@
+{
+  "schema": "VRgame.NumericIndex",
+  "version": "v1",
+  "frontend": "数值配置_前端_v1.json",
+  "backend": "数值配置_后端_v1.json",
+  "balanceDoc": "数值平衡_v1.md",
+  "legacyMonolith": "数值配置_v1.json",
+  "notes": "用户要求前端/后端两套表；权威结算以后端为准，前端供展示与客户端导入。"
+}
