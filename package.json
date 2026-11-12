@@ -1,0 +1,18 @@
+{
+  "name": "intelligent-reality-billing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Stripe Invoicing, Payments, and Tax for Intelligent Reality project milestones.",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "stripe": "^23.0.0"
+  }
+}
