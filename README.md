@@ -31,13 +31,13 @@ This integration was built against a claimable sandbox, not live mode.
 - Expires: 19 November 2026 (Asia/Shanghai calendar date follows the sandbox `expires_at` of 2026-11-19)
 - Claim: `https://dashboard.stripe.com/onboard_sandbox/YWNjdF8xVWIwNmFDZXpJbHVia1hiLDE3OTUxMDQyNTYv100bqqELZOb` or `stripe sandboxes claim`
 
-`STRIPE_PUBLISHABLE_KEY` is the publishable test key for account token `51UamozF4XnEIgalZ` (`GET /config`). That key is safe in a browser and cannot create invoices, customers, or tax settings.
+`STRIPE_PUBLISHABLE_KEY` is the publishable test key for `acct_1UamozF4XnEIgalZ` (`GET /config`). It is safe in a browser and cannot create invoices.
 
-The server still calls Stripe with `STRIPE_SECRET_KEY`. The claimable sandbox used to build this integration is a different account (`51Ub06aCezIlubkXb`). `GET /config` reports `accountsMatch: false` until the secret key is a restricted key from the same account as the publishable key. Create that restricted key in the Dashboard after the account is available. Do not use a secret key (`sk_`).
+`STRIPE_SECRET_KEY` must be a key for that same account. Keep it in `.env` only. `GET /config` reports `accountsMatch: true` when both keys share the account token `51UamozF4XnEIgalZ`. A restricted key (`rk_test_`) is safer than a full secret key (`sk_test_`).
 
-The claimable sandbox key is not in git. Put it in `.env` only while you are still on that sandbox.
+The earlier claimable sandbox `acct_1Ub06aCezIlubkXb` is a different account and is not the key in `.env`.
 
-The unclaimed key cannot read Tax settings. Until that read succeeds, this service refuses to set `automatic_tax`.
+On `acct_1UamozF4XnEIgalZ`, Tax settings are active and the head office is Bulgaria. There is no active tax registration, so this service leaves `automatic_tax` off. Account details are not submitted and charges are not enabled, so live charges are not available yet. Test-mode invoices work.
 
 ## Run
 
