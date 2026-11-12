@@ -3,9 +3,10 @@ import { listServiceLines } from "./catalog.js";
 import { createCustomer, createMilestoneInvoice } from "./invoices.js";
 import { createLedger } from "./ledger.js";
 import { taxReadiness } from "./tax.js";
+import { publishableKeyConfig } from "./keys.js";
 import { applyStripeEvent } from "./webhooks.js";
 
-export function createApp({ stripe, ledger, webhookSecret }) {
+export function createApp({ stripe, ledger, webhookSecret, publishableKey, secretKey }) {
   const app = express();
   app.disable("x-powered-by");
 
@@ -37,6 +38,10 @@ export function createApp({ stripe, ledger, webhookSecret }) {
 
   app.get("/health", (_request, response) => {
     response.json({ ok: true });
+  });
+
+  app.get("/config", (_request, response) => {
+    response.json(publishableKeyConfig(publishableKey, secretKey));
   });
 
   app.get("/service-lines", (_request, response) => {
@@ -82,10 +87,12 @@ export function createApp({ stripe, ledger, webhookSecret }) {
   return app;
 }
 
-export function createRuntime({ stripe, ledgerPath, webhookSecret }) {
+export function createRuntime({ stripe, ledgerPath, webhookSecret, publishableKey, secretKey }) {
   return createApp({
     stripe,
     ledger: createLedger(ledgerPath),
     webhookSecret,
+    publishableKey,
+    secretKey,
   });
 }

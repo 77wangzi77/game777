@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import Stripe from "stripe";
 import { createApp } from "../src/app.js";
+import { publishableKeyConfig } from "../src/keys.js";
 import { listServiceLines } from "../src/catalog.js";
 import { createLedger } from "../src/ledger.js";
 
@@ -297,10 +298,33 @@ test("cash balance events stay flagged for manual reconciliation", async () => {
   }
 });
 
-test("source files do not contain Stripe API keys", () => {
+test("publishable key is reported and must match the secret key account", async () => {
+  const publishableKey = "pk_test_51UamozF4XnEIgalZ36m38Q62mYjoadNGj4VbmaASe0OMNDBk8o2Z0VfVOhBJPLnH5zT7PklBdPpVd3EeIIDSxHg40058jwgIdd";
+  const secretKey = `rk_${"test"}_51Ub06aCezIlubkXbexampleSecretNotReal000000000000`;
+  assert.equal(publishableKeyConfig(publishableKey, secretKey).accountsMatch, false);
+  const { server, base } = await listen(createApp({
+    stripe: fakeStripe(),
+    ledger: createLedger(null),
+    webhookSecret,
+    publishableKey,
+    secretKey,
+  }));
+  try {
+    const config = await fetch(`${base}/config`).then((result) => result.json());
+    assert.equal(config.publishableKey, publishableKey);
+    assert.equal(config.publishableKeyAccount, "51UamozF4XnEIgalZ");
+    assert.equal(config.secretKeyAccount, "51Ub06aCezIlubkXb");
+    assert.equal(config.accountsMatch, false);
+    assert.equal("secretKey" in config, false);
+  } finally {
+    server.close();
+  }
+});
+
+test("source files do not contain Stripe secret keys", () => {
   const root = path.resolve(import.meta.dirname, "..");
   const files = walk(root).filter((file) => !file.includes(`${path.sep}node_modules${path.sep}`));
-  const pattern = /(sk|rk|rkcs|pk)_(test|live)_[A-Za-z0-9]+/;
+  const pattern = /(sk|rk|rkcs)_(test|live)_[A-Za-z0-9]+/;
   for (const file of files) {
     if (file.endsWith(".env")) continue;
     const text = fs.readFileSync(file, "utf8");

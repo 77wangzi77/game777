@@ -18,6 +18,8 @@ const app = createRuntime({
   stripe,
   ledgerPath: process.env.LEDGER_PATH || path.join(root, "data", "ledger.json"),
   webhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
+  publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+  secretKey,
 });
 
 const port = Number(process.env.PORT || 3000);
