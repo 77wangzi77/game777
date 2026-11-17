@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate skills and run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Execute the published engine-neutral C# AI examples as well as the Python tests.
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+
+      # Only the bundled create-game-assets helpers need a third-party package;
+      # installing it here lets their tests run instead of being skipped.
+      - name: Install asset-helper test dependency
+        run: python -m pip install -r skills/disciplines/create-game-assets/scripts/requirements.txt
+
+      - name: Validate SKILL.md frontmatter and links
+        run: python scripts/validate-skills.py
+
+      # Offline only: checks evals/triggers.json (format, skill names, 3 should + 1
+      # near-miss per skill). Passes while the file does not exist yet.
+      - name: Check trigger evals
+        run: python scripts/run-trigger-evals.py --check --allow-missing
+
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Build the documentation site
+        run: python scripts/generate-site.py
+
+      - name: Check generated pages
+        run: python scripts/check-site.py
+
+  check-scripts:
+    # The bundled project checkers promise Python 3.10+ and Windows/macOS support,
+    # so run their tests on the oldest supported Python and on all three systems.
+    name: Check scripts (${{ matrix.os }}, Python 3.10)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run check-script tests
+        run: python -m unittest tests.test_check_godot_project tests.test_check_unity_project tests.test_check_steam_build tests.test_check_ebitengine tests.test_check_defold_project tests.test_check_unity_build_size tests.test_build_report -v
